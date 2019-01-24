@@ -1,0 +1,34 @@
+.experience-title {
+  font-family: $roboto;
+  font-size: 30px;
+  font-weight: bold;
+  color: $dark-blue;
+}
+
+.experience-when {
+  font-family: $roboto;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(125,125,125,1);
+}
+
+.experience-description {
+  font-family: $nanum;
+  font-size: 20px;
+  font-weight: lighter;
+  color: rgba(100,100,100,1);
+  text-align: justify;
+}
+
+.experience-results {
+  font-family: $roboto;
+  font-size: 20px;
+  color: $vivid-blue;
+  text-align: justify;
+}
+
+.experience-content-highlight {
+  color: $dark-blue;
+  font-weight: bold !important;
+}
+

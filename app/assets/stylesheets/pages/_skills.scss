@@ -1,0 +1,32 @@
+.skillset {
+
+}
+
+.skillset-title {
+  font-size: 30px;
+  color: $dark-blue;
+  border-bottom: 2px solid $shy-blue;
+  padding-bottom: 5px;
+}
+
+.skillset-list {
+
+}
+
+.skillset-list-item {
+  margin-bottom: 3px;
+  color: rgba(100,100,100,1);
+  font-weight: lighter;
+}
+
+.skillset-list-item:before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #69b6d5;
+  margin-right: 10px;
+}
