@@ -1,3 +1,55 @@
+.wrapper-resume {
+  background-color: rgba(100,100,100,1) !important;
+}
+
+.container-resume {
+  background-color: white;
+  padding: 80px 60px;
+}
+
+.experiences-content {
+  font-size: 20px;
+  font-weight: lighter;
+  color: rgba(100,100,100,1);
+  font-family: $nanum;
+
+  text-align: justify;
+}
+
+.experiences-content-highlight {
+  color: $dark-blue;
+  font-family: $roboto;
+  font-weight: 400;
+}
+
+.experiences-education-title {
+  font-family: $roboto;
+  font-size: 22px;
+  font-weight: bold;
+  color: $dark-blue;
+
+  margin: 5px 0;
+}
+
+.experiences-education-when {
+  font-family: $roboto;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgba(125,125,125,1);
+
+  margin: 5px 0;
+}
+
+.experiences-education-description {
+  font-family: $nanum;
+  font-size: 20px;
+  font-weight: lighter;
+  color: rgba(100,100,100,1);
+  text-align: justify;
+
+  margin: 5px 0 15px;
+}
+
 .experience-title {
   font-family: $roboto;
   font-size: 30px;
@@ -27,8 +79,111 @@
   text-align: justify;
 }
 
-.experience-content-highlight {
-  color: $dark-blue;
-  font-weight: bold !important;
+.modal-dialog-images {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  margin-top: 100px;
+}
+
+.pic-modal-body {
+  background-color: black;
+}
+
+.modal-content {
+  width: auto;
+  height: auto;
+}
+
+.experience-images {
+  width: auto;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  img {
+    background: cover;
+    width: 900px;
+    height: 70vh;
+  }
+
+  position: relative;
+}
+
+.experience-image {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  position: relative;
+}
+
+.experience-caption {
+  position: absolute;
+
+  bottom: 0px;
+
+  margin-bottom: 15px;
+
+  padding: 20px;
+
+  background: rgba(50,50,50,0.7);
+
+  font-size: 18px;
+  color: white;
+  font-height: lighter;
+  font-family: $roboto;
+
+  width: 80%;
+  text-align: center;
+}
+
+.experience-image-call, .experiences-file-link {
+  color: $mid-blue;
+
+  padding: 0;
+
+  &:hover {
+    color: $dark-blue;
+  }
+
+  i {
+    margin-right: 15px;
+  }
+}
+
+.experiences-about-line:first-of-type {
+  margin-top: 40px;
+}
+.experiences-about-line:last-of-type {
+  margin-top: 40px;
+}
+.exeriences-about-text:last-of-type {
+  margin-bottom: 50px;
+}
+
+.i-circle-fill {
+  color: $mid-blue;
+  margin-right: 3px;
+}
+
+.i-circle-nofill {
+  color: $mid-blue;
+  margin-right: 3px;
+}
+
+.experiences-language-name {
+  font-size: 22px;
+  font-weight: normal;
+  color: rgba(120,120,120,1);
+  font-family: $nanum;
+
+  text-align: justify;
+
+  font-family: $roboto;
+  font-weight: 400;
 }
 

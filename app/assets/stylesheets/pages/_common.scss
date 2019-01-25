@@ -87,7 +87,7 @@ h1,h2,h3,h4,h5 {
 // Titles and text
 
 .page-title {
-  color: blue;
+  color: $mid-blue;
   text-transform: uppercase;
   margin-bottom: 4vh;
   font-size: 1.6em;
@@ -98,11 +98,15 @@ h1,h2,h3,h4,h5 {
 }
 
 .page-subtitle {
-  color: rgba(20,20,80,1);
-  margin-bottom: 2vh;
+  color: $mid-blue;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
   font-size: 1.4em;
   font-family: $roboto;
-  font-weight: 300;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(220,220,220,1);
 }
 
 .page-subsubtitle {

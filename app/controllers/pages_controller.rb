@@ -6,8 +6,8 @@ class PagesController < ApplicationController
   def show
     # Page infos
 
-    if params[:page] === 'experiences'
-      @page_title = 'Experiences'
+    if params[:page] === 'resume'
+      @page_title = 'Resume'
       @page_pic = "https://images.pexels.com/photos/814667/pexels-photo-814667.jpeg?cs=srgb&dl=asphalt-bicycle-daylight-814667.jpg&fm=jpg"
     elsif params[:page] === 'skills'
       @page_title = 'Skills'
