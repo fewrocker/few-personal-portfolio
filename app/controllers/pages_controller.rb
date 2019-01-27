@@ -9,8 +9,8 @@ class PagesController < ApplicationController
     if params[:page] === 'resume'
       @page_title = 'Resume'
       @page_pic = "https://images.pexels.com/photos/814667/pexels-photo-814667.jpeg?cs=srgb&dl=asphalt-bicycle-daylight-814667.jpg&fm=jpg"
-    elsif params[:page] === 'skills'
-      @page_title = 'Skills'
+    elsif params[:page] === 'projects'
+      @page_title = 'Projects'
       @page_pic = "https://images.pexels.com/photos/814667/pexels-photo-814667.jpeg?cs=srgb&dl=asphalt-bicycle-daylight-814667.jpg&fm=jpg"
     end
 
@@ -22,15 +22,23 @@ class PagesController < ApplicationController
     end
   end
 
+  def projects
+    if valid_page?
+      render template: "pages/projects/#{params[:project]}"
+    else
+      render file: "public/404.html", status: :not_found
+    end
+  end
+
   private
 
   def valid_page?
-    # Pagina valida se atende todas as condicoes abaixo. Caso contrario, ir para erro 404
+    # Check if page exists
     conds = []
-    # Pagina esta em pages/X
+    # Check if page is in pages/X
     conds << File.exist?(Pathname.new(Rails.root + "app/views/pages/#{params[:page]}.html.erb"))
-    # Pagina esta em pages/areas/X
-    conds << File.exist?(Pathname.new(Rails.root + "app/views/pages/areas/#{params[:area]}.html.erb"))
+    # Check if page is in pages/proects/X
+    conds << File.exist?(Pathname.new(Rails.root + "app/views/pages/projects/#{params[:project]}.html.erb"))
 
     return conds.include?(true)
   end

@@ -1,0 +1,75 @@
+<%= render 'shared/title-bar' %>
+
+<!-- Normal navbar for mobile -->
+
+<!-- //// -->
+
+<div class="wrapper-page">
+  <div class="container-page">
+
+    <div class="middle">
+      <div class="menu">
+        <li class="item" id="programming">
+          <p class="accordeon-group accordeon-group-0"><i class="fas fa-caret-down accordeon-dropdown-carets"></i>Freelances</p>
+          <div class="smenu">
+            <%= link_to "https://www.hrdengenharia.com.br/home", target: "_blank" do %>
+              <div class="each-project">
+                <div class="project-picture">
+                  <%= image_tag "projects-hrd.jpeg" %>
+                </div>
+                <div class="project-content">
+                  <h1 class="project-title">
+                    HRD Engenharia Institutional Website
+                  </h1>
+                  <h2 class="project-tags">
+                    Freelance &nbsp; Institutional &nbsp; Mobile-friendly &nbsp; Ruby on Rails
+                  </h2>
+                  <p class="project-description">
+                    Professional website designed from scratch for the company HRD Engenharia, which offers advanced structural analysis of assets for industrial companies. The website was given a modern look with a slideshow on the homepage, clean Javascript animations, has a contact form and maps integration.
+                  </p>
+                  <p class="project-cta">
+                    Click to see website
+                  </p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </li>
+
+        <li class="item" id="programming">
+          <p class="accordeon-group accordeon-group-1"><i class="fas fa-caret-down accordeon-dropdown-carets"></i>Team projects</p>
+          <div class="smenu">
+            <%= link_to "projects/everything" do %>
+              <div class="each-project">
+                <div class="project-picture">
+                  <%= image_tag "projects-hrd.jpeg" %>
+                </div>
+                <div class="project-content">
+                  <h1 class="project-title">
+                    Everything.me
+                  </h1>
+                  <h2 class="project-tags">
+                    Group project &nbsp; Recommendation systems &nbsp; Desktop only &nbsp; Ruby on Rails
+                  </h2>
+                  <p class="project-description">
+                    Everything is the final project I developed alongside 3 other students in Le Wagon. Finding a new movie to watch today is hard - recommendations systems gives bad results and the process of rating movies to perfect your recommendations are boring. Everything gathers info about your tastes in a fun way, and gives movie recommendations based on your similarity with your friends and other users.
+                  </p>
+                  <p class="project-cta">
+                    Click to see details
+                  </p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </li>
+
+
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+
+
