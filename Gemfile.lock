@@ -135,7 +135,9 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    redcarpet (3.4.0)
     redis (4.1.0)
+    rouge (3.3.0)
     sassc (2.0.0)
       ffi (~> 1.9.6)
       rake
@@ -196,7 +198,9 @@ DEPENDENCIES
   pry-rails
   puma
   rails (= 5.2.2)
+  redcarpet
   redis
+  rouge
   sassc-rails
   simple_form
   spring

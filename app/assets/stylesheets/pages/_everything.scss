@@ -1,0 +1,63 @@
+.wrapper-project-everything {
+  background-color: black;
+  min-height: 100vh;
+
+  padding-top: 50px;
+
+  padding-bottom: 150px;
+}
+
+.container-project-everything {
+
+}
+
+.everything-title-logo {
+  width: 400px;
+}
+
+.everything-title-description {
+  font-size: 25px;
+  color: white;
+  padding-left: 200px;
+}
+
+.everything-section-title {
+  font-size: 35px;
+  color: #A300FF;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid rgba(150,150,150,1);
+  font-family: $lobster;
+}
+
+.everything-section-text {
+  font-size: 20px;
+  color: white;
+  text-align: justify;
+  font-family: $roboto;
+}
+
+.everything-text-title {
+  font-size: 25px;
+  color: #A300FF;
+}
+
+.everything-gotosite-text {
+  font-size: 35px;
+  color: #A300FF;
+  font-family: $lobster;
+}
+
+.everything-gotosite {
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+    transition: 300ms ease;
+  }
+}
+
+.everything-section-subtitle {
+  font-size: 25px;
+  color: #A300FF;
+}

@@ -30,7 +30,9 @@
   font-family: $roboto;
   font-weight: 300;
   font-size: 22px;
+}
 
+.accordeon-experience {
   &:hover {
     cursor: pointer;
     border-bottom: 3px solid $grafite;

@@ -10,7 +10,7 @@
     <div class="middle">
       <div class="menu">
         <li class="item" id="programming">
-          <p class="accordeon-group accordeon-group-0"><i class="fas fa-caret-down accordeon-dropdown-carets"></i>Freelances</p>
+          <p class="accordeon-group-0 accordeon-group accordeon-project"><i class="fas fa-caret-down accordeon-dropdown-carets"></i>Freelances</p>
           <div class="smenu">
             <%= link_to "https://www.hrdengenharia.com.br/home", target: "_blank" do %>
               <div class="each-project">
@@ -37,12 +37,12 @@
         </li>
 
         <li class="item" id="programming">
-          <p class="accordeon-group accordeon-group-1"><i class="fas fa-caret-down accordeon-dropdown-carets"></i>Team projects</p>
+          <p class="accordeon-group-1 accordeon-group accordeon-project"><i class="fas fa-caret-down accordeon-dropdown-carets"></i>Team projects</p>
           <div class="smenu">
             <%= link_to "projects/everything" do %>
               <div class="each-project">
                 <div class="project-picture">
-                  <%= image_tag "projects-hrd.jpeg" %>
+                  <%= image_tag "projects-everything.png" %>
                 </div>
                 <div class="project-content">
                   <h1 class="project-title">
@@ -52,7 +52,7 @@
                     Group project &nbsp; Recommendation systems &nbsp; Desktop only &nbsp; Ruby on Rails
                   </h2>
                   <p class="project-description">
-                    Everything is the final project I developed alongside 3 other students in Le Wagon. Finding a new movie to watch today is hard - recommendations systems gives bad results and the process of rating movies to perfect your recommendations are boring. Everything gathers info about your tastes in a fun way, and gives movie recommendations based on your similarity with your friends and other users.
+                    Everything is the final project I developed alongside 3 other students in Le Wagon. Everything gathers info about your tastes in a fun way, and gives movie recommendations based on your similarity with your friends and other users.
                   </p>
                   <p class="project-cta">
                     Click to see details
@@ -60,6 +60,126 @@
                 </div>
               </div>
             <% end %>
+            <%= link_to "projects/spacewagons" do %>
+              <div class="each-project">
+                <div class="project-picture">
+                  <%= image_tag "projects-spacewagons.png", style:"background: black;" %>
+                </div>
+                <div class="project-content">
+                  <h1 class="project-title">
+                    Space Wagons
+                  </h1>
+                  <h2 class="project-tags">
+                    Group project &nbsp; Multiplayer game &nbsp; Desktop only &nbsp; Ruby on Rails
+                  </h2>
+                  <p class="project-description">
+                    Space Wagons was also developed with a team during the Le Wagon Bootcamp. Le Wagon asked us to build a marketplace website. We went a little further. We built a game in which you start with a spaceship and can choose parts for the spaceship. Then, you make expeditions to look for better parts and you can trade parts in the galactic marketplace. At the end of each day, a race takes plays to find the best pilot of the galaxy.
+                  </p>
+                  <p class="project-cta">
+                    Click to see details
+                  </p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </li>
+
+        <li class="item" id="programming">
+          <p class="accordeon-group-2 accordeon-group accordeon-project"><i class="fas fa-caret-down accordeon-dropdown-carets"></i>Personal challenges</p>
+          <div class="smenu">
+            <%= link_to "projects/burgershop" do %>
+              <div class="each-project">
+                <div class="project-picture">
+                  <%= image_tag "projects-burgershop.png", style:"background: black;" %>
+                </div>
+                <div class="project-content">
+                  <h1 class="project-title">
+                    Burger Shop
+                  </h1>
+                  <h2 class="project-tags">
+                    Practice project &nbsp; Online shop &nbsp; Mobile friendly &nbsp; Ruby on Rails
+                  </h2>
+                  <p class="project-description">
+                    I created Burger Shop because I wanted to practice Rails and MVC architecture on a high level. In Burger Shop, you can shop for burgers and beverages from many options. All burgers are 100% customizable. You can manage addresses for the delivery and track the progress of your delivery.
+                  </p>
+                  <p class="project-cta">
+                    Click to see details
+                  </p>
+                </div>
+              </div>
+            <% end %>
+
+            <%= link_to "projects/burgershop" do %>
+              <div class="each-project">
+                <div class="project-picture">
+                  <%= image_tag "projects-spiraldynamics.png", style:"background: black;" %>
+                </div>
+                <div class="project-content">
+                  <h1 class="project-title">
+                    Spiral Dynamics Quiz
+                  </h1>
+                  <h2 class="project-tags">
+                    Psychology &nbsp; Questionnaire &nbsp; Mobile friendly &nbsp; Ruby on Rails
+                  </h2>
+                  <p class="project-description">
+                    A friend I met when I went to study in the US wanted some help with her psychology major senior project. She needed a quiz to assess respondents according to the Spiral Dynamics ultimate model of human values and thinking patterns. For me, it was a great opportunity to practice with Rails controller logics and Javascript/Rails Forms integration to build an interactive platform.
+                  </p>
+                  <p class="project-cta">
+                    Click to see details
+                  </p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </li>
+
+        <li class="item" id="programming">
+          <p class="accordeon-group-3 accordeon-group accordeon-project"><i class="fas fa-caret-down accordeon-dropdown-carets"></i>For fun</p>
+          <div class="smenu">
+            <%= link_to "projects/footballbets" do %>
+              <div class="each-project">
+                <div class="project-picture">
+                  <%= image_tag "projects-footballpredictions.jpg" %>
+                </div>
+                <div class="project-content">
+                  <h1 class="project-title">
+                    Neural networks applied to Football
+                  </h1>
+                  <h2 class="project-tags">
+                    Academic publication &nbsp; Neural Networks &nbsp; Matlab
+                  </h2>
+                  <p class="project-description">
+                    I always thought that end of course research projects have boring titles and for many it is a boring work you have to do just to graduate. I wanted to spice it up a little bit. I tried to study how well neural networks can predict soccer matches and devise a bot which is able to profit in sports bets. In the end, the bots made a small profit on average, but were unreliable. However, the process and results were a lot of fun
+                  </p>
+                  <p class="project-cta">
+                    Click to see details
+                  </p>
+                </div>
+              </div>
+            <% end %>
+
+            <%= link_to "projects/footballbets" do %>
+              <div class="each-project">
+                <div class="project-picture">
+                  <%= image_tag "projects-blackjack.png" %>
+                </div>
+                <div class="project-content">
+                  <h1 class="project-title">
+                    Blackjack analysis
+                  </h1>
+                  <h2 class="project-tags">
+                    Curiosity project &nbsp; Statistical analysis &nbsp; C
+                  </h2>
+                  <p class="project-description">
+                    I always found the dynamics and mathematics behind the games interesting. Blackjack caught my attention because it is the fairest game that can be played on a casino, and the only game in which a player can be skilled enough to actually beat the house. Back when I was 14, I wrote these codes in C to make a statistic analysis of the game and built a full report that has been downloaded over 500 times!
+                  </p>
+                  <p class="project-cta">
+                    Click to see details
+                  </p>
+                </div>
+              </div>
+            <% end %>
+
           </div>
         </li>
 

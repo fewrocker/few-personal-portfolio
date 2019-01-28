@@ -21,7 +21,8 @@ Array.prototype.forEach.call(accordeonHeaders, header => {
   header.addEventListener('click', function() {
 
     // Define index of header clicked
-    headerIndex = parseInt(header.classList[1].match(/\d+/g)[0],10)
+    headerIndex = parseInt(header.classList[0].match(/\d+/g)[0],10)
+    l(headerIndex)
 
     // --------------------------------------------------------
     // If clicked header has content closed, close all others and open the clicked

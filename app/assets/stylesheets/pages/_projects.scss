@@ -1,3 +1,17 @@
+// Accordeon titles on pages project
+.accordeon-project {
+  background-color: $dark-blue;
+  border-bottom: none;
+  color: white;
+
+  margin: 10px 0 0 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// Each item on the inside menu of the accordeon on pages project
 .each-project {
   display: flex;
   align-items: center;
@@ -5,10 +19,15 @@
   padding: 30px;
   border-radius: 20px;
 
+  position: relative;
+
+  padding: 16px 26px;
+  margin: 4px 0;
+
   &:hover {
-    background: $shy-blue;
     cursor: pointer;
-    transition: 500ms ease;
+    background: $shy-blue;
+    transition: 300ms;
   }
 }
 

@@ -1,0 +1,129 @@
+<%= render 'shared/title-bar' %>
+
+<!-- Normal navbar for mobile -->
+
+<!-- //// -->
+
+<div class="wrapper-page wrapper-project-everything">
+  <div class="container-page container-project-everything">
+
+    <%= link_to "https://www.every-thing.me/", target: "_blank" do %>
+      <div class="everything-title-div text-center">
+        <%= image_tag "projects-everything.png", class:"everything-title-logo" %>
+        <p class="everything-title-description">
+          Get great recommendations, easily
+        </p>
+      </div>
+    <% end %>
+
+    <h1 class="everything-section-title">
+      Situation
+    </h1>
+    <p class="everything-section-text">
+      Le Wagon was an incredible experience. The first 7 weeks are a continuous learning experience based on new concepts and tough challenges to internalize that knowledge. But it all culminates on the last 2 weeks.
+    </p>
+    <p class="everything-section-text">
+      We had 2 weeks to come up with an idea, and bring that idea to life using all we have learnt. The result was two weeks of debating and coding all day long, and many times all night long. The result is <span class="everything-text-title">everything</span>.
+    </p>
+    <%= link_to "https://www.every-thing.me/", target: "_blank" do %>
+      <div class="everything-gotosite text-center">
+        <%= image_tag "projects-everything-1", class:"centered-image", style:"width: 80%;" %>
+        <p class="everything-gotosite-text">Go to website!</p>
+      </div>
+    <% end %>
+
+
+    <h1 class="everything-section-title">
+      The problem
+    </h1>
+    <p class="everything-section-text">
+      Building a recommendation system is a complex problem faced by many companies today. Companies which rely on sharing media content in exchange for a subscription fee know that their most important KPI is customer retention. And, as we find out, giving good recommendations is a huge factor to keep customers in your platform.
+    </p>
+    <p class="everything-section-text">
+      The holy grail to make good recommendations is to gather good data from your customers about what they like and dislike. For some applications, making the bridge between how the user navigates the platform and his or her taste is easier: skipping songs and how long you listened to a song on Spotify, for example, is a very straightforward hint about what they think about the songs.
+    </p>
+    <p class="everything-section-text">
+      However, other platforms like Netflix are known to have issues. Movies are way bigger than songs, so starting a movie to check some scenes and deciding to skip (don't like) or stay (like) isn't a thing. Also, there isn't a culture of really rating the movies and episodes after you watch them. And even if you do, many other users don't and, as we see, understanding similarity between users is a huge factor to give good recommendations.
+    </p>
+    <p class="everything-section-text">
+      Other websites that try to help you choose your next movies aren't a good solution, either. The process of navigating through many titles, looking at details, trailer and comments can be tiring. Some websites try to assess your taste but they do it in a very boring way - you have to keep rating many and many movies on a 1-5 star scale, which feels more like work than entertainment.
+    </p>
+
+    <h1 class="everything-section-title">
+      The solution
+    </h1>
+    <p class="everything-section-text">
+      We created a platform that makes sharing your tastes about movies fun. Therefore, users actively want to keep rating, and the valuable info that so many companies failed to acquire arrives at the servers.
+    </p>
+    <p class="everything-section-text">
+      The first feature that makes it fun is how you rate. There are mini-games within the platform in which to understand what you like or don't like. For now, we implemented a movie battle logic: we show you two movies and you tell us which one you prefer. We tested and people love doing that. And the best part: after a given number of battles, we are able to build a list of your movie preferences which gets very accurate.
+    </p>
+    <p class="everything-section-text">
+      The cool part is that many other games can be made. We could build a whole tournament between movies (like some websites do and people play the tournament just for fun and to share the results), or build a Tinder-like platform in which people receive movies and swipe to say what they think about it. These forms of rating are more engaging and quickly absorbs taste data from users.
+    </p>
+    <p class="everything-section-text">
+      You can also view a list of users and friends and see how similar they are to you. You can navigate between the movies to see how they are doing on the battles, and how many people know the movie versus how many don't. These kinds of information are very engaging when connected to social media, and tends to generate cool discussions between movie fans.
+    </p>
+
+    <div class="video text-center">
+      <video src="/videos/projects-everything-video.mp4" autoplay loop muted class="centered-image" style="width: 60%;"></video>
+    </div>
+
+
+    <h1 class="everything-section-title">
+      How suggestions work
+    </h1>
+    <p class="everything-section-text">
+      Recommendations systems can get very tricky and I want to show you why. There are basically two strategies of content recommendation: <strong>Content based</strong> and <strong>User similarity based</strong>.
+    </p>
+    <p class="everything-section-text">
+      Content based is centered on the content. Each content has many characteristics. In case of movies, think: genre, duration, director, main actors, year of release, etc. Depending on how you like some movies, we can understand which are the common characteristics between what you like and show you more of that. The challenge with this model is that, for movies, it is very difficult to understand which characteristics correlate well with taste, apart from genre.
+    </p>
+    <p class="everything-section-text">
+      User similarity based is centered on the users. You gather data about the tastes of your users, and then you can cluster them in groups of users which have a similar taste, and then you recommend a movie that the majority of the cluster likes but the receiving user has not yet seen. This eliminates the need of digging deep into the movie characteristics - you don't have to understand exactly why these users like the movie, but the fact that they do is enough. The challenge with this model is that to give good recommendations you need to start with a big user base which usually rates their movies. The problem, as we discussed, is that most users do not rate most movies.
+    </p>
+    <p class="everything-section-text">
+      We picked a user similarity approach, and tackled its challenge: making users give ratings by making it fun. If everything gets a critical mass of happily rating individuals, the recommendations will get very sharp. The steps are straightforward: register and battle your movies. The platform will generate a list of your movies from best to worst. Then, it will compare your list with the lists of other users. Finally, it will look in the lists of most similar users for a movie they love, but you haven't yet seen.
+    </p>
+    <p class="everything-section-text">
+      Curiosity: the animation on everything's homepage is inspired on how user similarity recommendations work!
+    </p>
+
+    <h1 class="everything-section-title">
+      Code snippets
+    </h1>
+
+    <h2 class="everything-section-subtitle">
+      Building the recommendation list (.rb)
+    </h2>
+    <p class="everything-section-text">
+      <strong>Task:</strong> Build a list of movie recommendations to the user based on the similarity of his list and the list of most similar users
+    </p>
+
+    <div class="code-snippet">
+      <button class="btn btn-success btn-expandcode">Click to expand code</button>
+      <script src="https://gist.github.com/fewrocker/d7fd25990785c15a066714dcf00931eb.js" class="code-snippet"></script>
+      <br>
+      <button class="btn btn-success btn-expandcode btn-expandcode-bottom">Click to expand code</button>
+    </div>
+
+    <h2 class="everything-section-subtitle">
+      Managing the battles (.js)
+    </h2>
+    <p class="everything-section-text">
+      <strong>Task:</strong> The battlepage shows 2 movies for the user to pick. However, the user might have not seen one of these. We solve this problem by having Rails send a list of 10 movies to each of the 2 positions. If user hasn't seen one, he can click the "Haven't seen" button, and switch to the next movie. The app also has to update the Rails forms values. The app stores movies the user hasn't seen, so it doesn't appear again soon, and so that it can be recommended to the user later on. Also, when the user votes, the app needs to understand which films where battling during the time of decision
+    </p>
+
+    <div class="code-snippet">
+      <button class="btn btn-success btn-expandcode">Click to expand code</button>
+      <script src="https://gist.github.com/fewrocker/60e9af00b9b9b562e5a075cf4cafcd04.js"></script>
+      <br>
+      <button class="btn btn-success btn-expandcode btn-expandcode-bottom">Click to expand code</button>
+    </div>
+
+
+
+  </div>
+</div>
+
+
