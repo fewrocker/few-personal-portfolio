@@ -1,0 +1,90 @@
+.wrapper-project-spacewagons {
+  height: cover;
+  width: auto;
+
+  background-image: linear-gradient(-225deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 80%), url('https://images.pexels.com/photos/1205301/pexels-photo-1205301.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=800&w=1260');
+  background-repeat: repeat-y;
+}
+
+@media screen and (min-width: 1200px) {
+  .wrapper-project-spacewagons{
+    padding: 110px 250px 40px 250px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapper-project-spacewagons {
+    padding: 100px 80px 40px 80px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper-project-spacewagons {
+    padding: 100px 25px 40px 25px;
+  }
+}
+
+.container-project-spacewagons {
+
+}
+
+.spacewagons-title-logo {
+  width: 600px;
+}
+
+.spacewagons-title-description {
+  font-size: 28px;
+  color: white;
+  font-family: $encode-sans;
+}
+
+.spacewagons-section-title {
+  font-size: 35px;
+  color: $spacewagons-green;
+  text-transform: uppercase;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  font-family: $encode-sans;
+}
+
+.spacewagons-section-text {
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: white;
+  text-align: justify;
+  font-family: $encode-sans;
+}
+
+.spacewagons-text-title {
+  font-size: 25px;
+  color: $spacewagons-green;
+}
+
+.spacewagons-gotosite-text {
+  font-size: 35px;
+  letter-spacing: 2px;
+  color: $spacewagons-green;
+  font-family: $encode-sans;
+}
+
+.spacewagons-gotosite {
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+    transition: 300ms ease;
+  }
+}
+
+.spacewagons-section-subtitle {
+  font-size: 25px;
+  color: $spacewagons-green;
+}
+
+.spacewagons-section-gameplay-title {
+  color: white;
+}
+
+.carousel-control-spacewagons {
+  font-size: 80px !important;
+}

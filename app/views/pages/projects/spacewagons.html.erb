@@ -1,0 +1,205 @@
+<%= render 'shared/title-bar' %>
+
+<!-- Normal navbar for mobile -->
+
+<!-- //// -->
+
+<div class="wrapper-project-spacewagons">
+  <div class="container-page container-project-spacewagons">
+
+    <%= link_to "http://spacewagons.herokuapp.com", target: "_blank" do %>
+      <div class="spacewagons-title-div text-center">
+        <%= image_tag "projects-spacewagons.png", class:"spacewagons-title-logo" %>
+        <p class="spacewagons-title-description">
+          The only place in the galaxy for your spaceship parts
+        </p>
+      </div>
+    <% end %>
+
+    <h1 class="spacewagons-section-title">
+      Situation
+    </h1>
+    <p class="spacewagons-section-text">
+      Le Wagon asked us to build a market place in one week. But we wanted to go further! In one week, we build a full playable game. In <strong>SpaceWagons</strong>, you can become the greatest spaceship pilot in the Universe! Build your first ship, go on expeditions to find better parts and trade your parts (There is a marketplace!) with other users to build the perfect ship. Every night, a thrilling galactic race takes place to see who is the best in town.
+    </p>
+
+    <%= link_to "https://www.every-thing.me/", target: "_blank" do %>
+      <div class="spacewagons-gotosite text-center">
+        <%= image_tag "projects-spacewagons-1.png", class:"centered-image", style:"width: 80%;" %>
+        <p class="spacewagons-gotosite-text">Go to website!</p>
+      </div>
+    <% end %>
+
+
+    <h1 class="spacewagons-section-title">
+      Gameplay
+    </h1>
+    <p class="spacewagons-section-text">
+      Have a taste of Spacewagon's gameplay. As you read, keep one thing in mind: The entire game was coded in <strong style="font-size: 30px;">5 days!</strong>
+    </p>
+
+    <h1 class="spacewagons-section-gameplay-title">
+      Build your ship
+    </h1>
+    <p class="spacewagons-section-text">
+      As you enter this incredible adventure, you must build your first ship. First of all, give it a name - choose wisely, because you will become known for your ship name! Then, pick your basic parts. Each ship has 5 main parts: a propulsor, a shell, a shield, a bumper and wings. Each part has 5 different stats: acceleration, speed, maneuvrability, attack and defense. These stats will dictate how well your ship will race! Spend your money wisely on the basic parts, because if you pick a better quality part of one type, there will be less money for other parts!
+    </p>
+
+    <div class="video text-center">
+      <video src="/videos/projects-spacewagons-2.mp4" autoplay loop muted class="centered-image" style="width: 80%;"></video>
+    </div>
+
+    <h1 class="spacewagons-section-gameplay-title">
+      Go on expeditions
+    </h1>
+    <p class="spacewagons-section-text">
+      On the expeditions tab, you can go for adventures to explore other planets. On these planets, you will find gold, and up to three new parts. The parts are randomly generated, so each player will find exclusive parts and build a ship completely different from all other players. Parts can be Common, Rare and Unique. Unique parts are much more difficult to find, but more powerful! Save them for the races and surprise your folks!
+    </p>
+
+    <div class="video text-center">
+      <video src="/videos/projects-spacewagons-video.mp4" autoplay loop muted class="centered-image" style="width: 80%;"></video>
+    </div>
+
+    <h1 class="spacewagons-section-gameplay-title">
+      Manage your parts and build your legacy
+    </h1>
+    <p class="spacewagons-section-text">
+      Each player has a pilot's license, showing their name, current rank and score. Do not rest until you're the top pilot in town. You can also see your ship stats, which are the sum of the stats of your parts. Each stat affects your racing in unique ways: acceleration is best for maps with a lot of curves, speed is best for maps with straight lines; maneuvrability prevents you from crashing; attack increases the likelihood that you will destroy an enemy ship, and defense decreases the change you will be a victim!
+    </p>
+    <p class="spacewagons-section-text">
+      For this, you have to choose your parts wisely. Your parts have a durability and will be damaged on each expedition and each race. Therefore, you need to manage them well and always be well equiped for the race. Gather extra parts on expeditions, and either equip or sell them to get more stats and resources.
+    </p>
+
+    <% modal_count = 0 %>
+    <div class="modal-body pic-modal-body">
+      <div class="experience-images">
+        <div class="experience-image-<%= modal_count %>-0 experience-image">
+          <%= image_tag "projects-spacewagons-5.png", class:"spacewagons-title-logo", style:"width: 100%;" %>
+        </div>
+        <div class="experience-image-<%= modal_count %>-1 experience-image">
+          <%= image_tag "projects-spacewagons-6.png", class:"spacewagons-title-logo", style:"width: 100%;" %>
+        </div>
+      </div>
+
+      <a href="#sl" class="left-slide-<%= modal_count %> left carousel-control left-carousel-control" role="button" data-slide="prev">
+        <span class=" glyphicon glyphicon-chevron-left carousel-control-spacewagons" aria-hidden="true"></span>
+      </a>
+      <a href="#sl" class="right-slide-<%= modal_count %> right carousel-control right-carousel-control" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right carousel-control-spacewagons" aria-hidden="true"></span>
+      </a>
+    </div>
+    <% modal_count += 1 %>
+
+    <h1 class="spacewagons-section-gameplay-title">
+      Trade your parts on the Galactic Mall
+    </h1>
+    <p class="spacewagons-section-text">
+      In order to build a more balanced ship, you can put parts you find on expeditions for sale in the Galactic Mall. There, you can also find parts from other users, and buy it from them. You can also salvage your parts for a lower value in case you need to make some quick money
+    </p>
+
+    <%= image_tag "projects-spacewagons-4.png", class:"spacewagons-title-logo", style:"width: 100%;" %>
+
+    <h1 class="spacewagons-section-gameplay-title">
+      Time to race!
+    </h1>
+    <p class="spacewagons-section-text">
+      Each night, all players will participate on a galactic race. This is where you find glory.
+    </p>
+    <p class="spacewagons-section-text">
+      A race has 17 laps. On each lap, there are three phases. In the combat phase, ships can destroy other ships. The likelyhood that you will be the attacker is proportional to your attack, and the likelyhood of you being a victim decreases proportionally to your defense. If you kill someone, you get extra points. if you get destroyed, you will receive 0 points for this lap.
+    </p>
+    <p class="spacewagons-section-text">
+      On each lap, player's ships may crash. The chances of you crashing are proportional to your ship's lack of maneuvrability. Then, the remaining players will race on that lap. Based on their accelerations (good for tracks with more curves) and speed (best for tracks with more straight lines), player's will receive a score for that lap, and points based on the order they cross the finish line. After all 17 laps, the points are summed, and additional points are awarded to the players with the highest stats, and the winner is declared!
+    </p>
+    <p class="spacewagons-section-text">
+      There is a new season every week, and each week will have a new winner. Buckle up and prepare for the adventure. If you win a season, absolutely nothing will happen. Have fun!
+    </p>
+
+    <div class="modal-body pic-modal-body">
+      <div class="experience-images">
+        <div class="experience-image-<%= modal_count %>-0 experience-image">
+          <%= image_tag "projects-spacewagons-2.png", class:"spacewagons-title-logo", style:"width: 100%;" %>
+        </div>
+        <div class="experience-image-<%= modal_count %>-1 experience-image">
+          <%= image_tag "projects-spacewagons-3.png", class:"spacewagons-title-logo", style:"width: 100%;" %>
+        </div>
+      </div>
+
+      <a href="#sl" class="left-slide-<%= modal_count %> left carousel-control left-carousel-control" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left carousel-control-spacewagons" aria-hidden="true"></span>
+      </a>
+      <a href="#sl" class="right-slide-<%= modal_count %> right carousel-control right-carousel-control" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right carousel-control-spacewagons" aria-hidden="true"></span>
+      </a>
+    </div>
+    <% modal_count += 1 %>
+
+    <h1 class="spacewagons-section-title">
+      Code snippets
+    </h1>
+
+    <h2 class="spacewagons-section-subtitle">
+      Race logics (.rb)
+    </h2>
+    <p class="spacewagons-section-text">
+      <strong>Task:</strong> The race has many laps, each lap has many phases and each phase is affected by different ship stats and luck. The result is a very complex but good looking code!
+    </p>
+
+    <div class="code-snippet">
+      <button class="btn btn-success btn-expandcode">Click to expand code</button>
+      <script src="https://gist.github.com/fewrocker/285c88f4a0fd71bc0606e7dc2b6e20f8.js"></script>
+      <br>
+      <button class="btn btn-success btn-expandcode btn-expandcode-bottom">Click to expand code</button>
+    </div>
+
+    <h2 class="spacewagons-section-subtitle">
+      Picking basic parts (.js)
+    </h2>
+    <p class="spacewagons-section-text">
+      <strong>Task:</strong> Create the logic used when the player creates a ship and has to pick his basic parts - the menu that is shown in the "Build your ship" section animation. There is a simple but elegant logic that ensures that user can have a better navigation between parts, and that he has to pick one part of each type and use all the coins he has, while having a good visual feedback of the parts he selected and how he is spending his coins
+    </p>
+
+    <div class="code-snippet">
+      <button class="btn btn-success btn-expandcode">Click to expand code</button>
+      <script src="https://gist.github.com/fewrocker/f61bfde600b3aab51e02e1d41f76d794.js"></script>
+      <br>
+      <button class="btn btn-success btn-expandcode btn-expandcode-bottom">Click to expand code</button>
+    </div>
+
+    <h2 class="spacewagons-section-subtitle">
+      Expedition animation (.js)
+    </h2>
+    <p class="spacewagons-section-text">
+      <strong>Task:</strong> I wanted to make the expedition results more dramatic. The result is what is shown at the "Go on expeditions" section. You can see animations of loading bars, flying ships, gold counters increasing and items found appearing with a dramatic tone. What will you find in this new expedition?
+    </p>
+
+    <div class="code-snippet">
+      <button class="btn btn-success btn-expandcode">Click to expand code</button>
+      <script src="https://gist.github.com/fewrocker/7cbffa8c4539b156925b1162683a7c6d.js"></script>
+      <br>
+      <button class="btn btn-success btn-expandcode btn-expandcode-bottom">Click to expand code</button>
+    </div>
+
+    <h2 class="spacewagons-section-subtitle">
+      Race results view (.html.erb)
+    </h2>
+    <p class="spacewagons-section-text">
+      <strong>Task:</strong> This is an embedded Ruby HTML example, which renders the page of the race results presentations, seen in the pictures of the section "Time to race!". The styling is included on the Gist to help visualization.
+    </p>
+
+    <div class="code-snippet">
+      <button class="btn btn-success btn-expandcode">Click to expand code</button>
+      <script src="https://gist.github.com/fewrocker/abf3f9510a07b750341673f6b233ea48.js"></script>
+      <br>
+      <button class="btn btn-success btn-expandcode btn-expandcode-bottom">Click to expand code</button>
+    </div>
+
+
+
+
+
+
+  </div>
+</div>
+
+
