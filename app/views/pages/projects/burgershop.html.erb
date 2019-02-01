@@ -1,0 +1,203 @@
+<%= render 'shared/title-bar' %>
+
+<!-- Normal navbar for mobile -->
+
+<!-- //// -->
+
+<div class="wrapper-page wrapper-project-burgershop-content">
+  <div class="container-page container-project-burgershop">
+    <%= link_to "https://www.every-thing.me/", target: "_blank" do %>
+      <div class="burgershop-title-div text-center">
+        <%= image_tag "projects-burgershop-1.png", class:"burgershop-title-logo" %>
+        <h1 class="burgershop-title-logo-text">
+          BurgerShop
+        </h1>
+        <p class="burgershop-title-description">
+          <strong>Wonderful</strong> & <strong>cheap</strong> virtual burgers
+        </p>
+      </div>
+    <% end %>
+
+    <h1 class="burgershop-section-title">
+      Task and Scope
+    </h1>
+    <p class="burgershop-section-text">
+      <span class="burgershop-text-title">BurgerShop</span> was built with the intention of practicing more advanced Rails MVC architectures and user flows. BurgerShop simulates an online shop for a burger delivery app. The user accesses his/her account, and shops his desired items from the menu. All the burgers are fully customizable and you can pick which ingredients and how much of each you want. There are also beverage options. Then, the user can register addresses for the delivery, place the order and track the progress of the order real-time.
+    </p>
+    <p class="burgershop-section-text">
+      Also, <span class="burgershop-text-title">BurgerShop</span> is 100% mobile-friendly!
+    </p>
+
+    <%= link_to "https://www.every-thing.me/", target: "_blank" do %>
+      <div class="burgershop-gotosite text-center">
+        <%= image_tag "projects-burgershop-2.png", class:"centered-image", style:"width: 90%;" %>
+        <p class="burgershop-gotosite-text">Go to website!</p>
+      </div>
+    <% end %>
+
+
+    <h1 class="burgershop-section-title">
+      User experience
+    </h1>
+    <p class="burgershop-section-text">
+      First, the user accesses the website and logs into his or her account. The authentication process is held by Devise with customized views.
+    </p>
+
+    <h1 class="burgershop-section-subtitle">
+      Menu
+    </h1>
+
+    <p class="burgershop-section-text">
+      Then, the user arrives at the meals menu. Here, he is able to see all items which are available, in two categories: burgers and drinks. The user can also see a summary of the order total, click to expand to see his orders details and remove items from the order.
+    </p>
+
+    <%= image_tag "projects-burgershop-3.png", class:"centered-image", style:"width: 90%;" %>
+
+    <h1 class="burgershop-section-subtitle">
+      Customizable burgers
+    </h1>
+
+    <p class="burgershop-section-text">
+      All burgers are 100% customizable. There are some basic burgers you can start from, but when you pick a burger, you are redirected to a page to customize it. All the basic ingredients of the burger are free for the normal quantity, can be taken off for free or ordered extra for a cost. Ingredients which aren't initially on the burger can also be added. The user receives live feedback on the ingredients selected and new price of the customized burger.
+    </p>
+
+
+    <div class="video text-center">
+      <video src="/videos/projects-burgershop-1.mp4" autoplay loop muted class="centered-image" style="width: 90%;"></video>
+    </div>
+
+    <h1 class="burgershop-section-subtitle">
+      Ordering beverages
+    </h1>
+
+    <p class="burgershop-section-text">
+      The drinks are more straightforward. Just pick a beverage between the options, and click on the card to add. A pop-up will appear so you can select the desired quantity, while seeing a live feedback on the total cost. If the user places two orders for the same beverage, the system automatically groups the orders.
+
+
+    <div class="video text-center">
+      <video src="/videos/projects-burgershop-2.mp4" autoplay loop muted class="centered-image" style="width: 90%;"></video>
+    </div>
+
+    <h1 class="burgershop-section-subtitle">
+      Pick an address and checkout
+    </h1>
+
+    <p class="burgershop-section-text">
+      When you finish picking your items, you can proceed to checkout. You must select an address for delivery between your registered address. If there is no address registered, you will create one. One last screen shows your order summary, price and address so you can give a final confirmation.
+    </p>
+
+    <%= image_tag "projects-burgershop-4.png", class:"centered-image", style:"width: 70%; height: 70%;" %>
+
+    <h1 class="burgershop-section-subtitle">
+      Track order progress
+    </h1>
+
+    <p class="burgershop-section-text">
+      Finally, you can track the progress and delivery estimates for your orders, and also see your order history. To see the details of orders, click on the order headers to expand the content.
+    </p>
+
+    <%= image_tag "projects-burgershop-5.png", class:"centered-image", style:"width: 90%;" %>
+
+    <h1 class="burgershop-section-title">
+      Creating an Online Shop on Rails
+    </h1>
+
+    <h1 class="burgershop-section-subtitle">
+      Rails Models and DB Schema
+    </h1>
+
+    <%= image_tag "projects-burgershop-6.png", class:"centered-image", style:"width: 90%;" %>
+
+    <p class="burgershop-section-text">
+      The first step on the project is designing the models and their relations. The solution uses three levels of models to create an order:
+      <ul class="burgershop-list">
+        <li class="burgershop-list-item">The first level are the models for items avaiable to be bought. These include the basic burgers <span class="burgershop-italics">(burger)</span>, beverages <span class="burgershop-italics">(drink)</span> and ingredients <span class="burgershop-italics">(ingredient)</span>. The ingredients model is necessary to make the burgers customizable.</li>
+        <li class="burgershop-list-item">The second level are the models for order items. Order items can be burgers <span class="burgershop-italics">(burger_order)</span> and beverage orders <span class="burgershop-italics">(drink_order)</span>. Since burgers are customizable, the burger_order is also related to all the ingredients and their quantities selected during burger customization <span class="burgershop-italics">(ingredient_order)</span>.</li>
+        <li class="burgershop-list-item">The third and last level is the entire order level <span class="burgershop-italics">(order)</span>. Therefore, the order is related to the items the user picked for the order, which are then related to the items offered by the shop.</li>
+        <li class="burgershop-list-item">There are also models for the users and addresses. The user model is handled by Devise for authentication and also helps hold information about the user, such as order history and addressess. The address model is useful so the user can order again for addresses he already ordered in the past.</li>
+      </ul>
+    </p>
+
+    <h1 class="burgershop-section-subtitle">
+      Rails Controllers
+    </h1>
+
+    <p class="burgershop-section-text">
+      There are items the shop offers (level 3). The user picks the items he wants to build an order item (level 2). All the order items are compiled into one order (level 1), that then the user checkouts and pays. The full order and all items are then displayed to the restaurant staff so it can be prepared and shipped for delivery. The staff can update the order status to give feedback to the user.
+    </p>
+
+    <p class="burgershop-section-text">
+      The orders have different status. Whenever the user arrives at the menu screen, the app creates an order with "shopping" status. All order items placed will be saved on this order, which will be available until the user checks out. When the user pays, the order changes to "On preparation", then to "Out for delivery", and finally "Completed". All these changes can be tracked on the "My orders" tab.
+    </p>
+
+    <p class="burgershop-section-text">
+      For burgers, the user selects a base burger and goes to the customization screen. It contains a rails form which has one input for each ingredient available in the shop. The value of each input is the quantity the user picked for that ingredient. Therefore, a Javascript logic handles the user interface, highlighting the selected ingredients, updating the order value and changing the values of the inputs on the rails forms. When the user clicks "Place order", Rails will create an instance of <span class="burgershop-italics">burger_order</span> and many instances of <span class="burgershop-italics">ingredient_order</span>, one for each ingredient present in the burger, also holding the quantity selected. All <span class="burgershop-italics">ingredient_order</span> are then linked to the parent burger_order, which is linked to the parent <span class="burgershop-italics">order</span>.
+    </p>
+
+    <p class="burgershop-section-text">
+      For drinks, the process is easier. When the user opens the pop-up to select the beverage quantity, there is a Rails form. A Javascript handles the user interaction of picking more or less of that item, updates the quantity and price for the order and also the value in the Rails form. When the user hits the "Add" button, Rails creates one instance of <span class="burgershop-italics">drink_order</span> with the specified quantity.
+    </p>
+
+    <h1 class="burgershop-section-subtitle">
+      Rails Views
+    </h1>
+
+    <p class="burgershop-section-text">
+      Whenever a view has to show informations about the orders, such as in the order summary in the menu or on checkout, the same logic is applied.
+    </p>
+
+    <p class="burgershop-section-text">
+      To show all the burgers on the order, the view iterates through all <span class="burgershop-italics">burger_order</span> on <span class="burgershop-italics">order</span>. It builds a header with the <span class="burgershop-italics">burger_order</span> burger name, price and delete button if needed. To show all the ingredients and quantities on the burger, the views iterates through all <span class="burgershop-italics">ingredient_order</span> linked to the <span class="burgershop-italics">burger_order</span>
+    </p>
+
+    <p class="burgershop-section-text">
+      To show all the drinks on the order, the view iterates through all <span class="burgershop-italics">drink_order</span> on <span class="burgershop-italics">order</span>. It builds a header with the <span class="burgershop-italics">drink_order</span> burger name, quantity, price and delete button.
+    </p>
+
+
+    <h1 class="burgershop-section-subtitle">
+      Take a look at the code snippets to see it all in action!
+    </h1>
+
+    <h1 class="burgershop-section-title">
+      Code snippets
+    </h1>
+
+    <p class="burgershop-section-text">
+      Warning: even though the website is in English, some model names and attributes on the codes are written in Portuguese. The comments will help you understand what it is all about
+    </p>
+
+    <h2 class="burgershop-section-subtitle">
+      Menu page (.html.erb)
+    </h2>
+    <p class="burgershop-section-text">
+      <strong>Task:</strong> Render the menu page. This page shows all the burgers available with name, picture, price and ingredients, drinks available with name, picture and price. Also, you can see your order summary with total price, and click to expand additional information, which shows all the items on your current order, as shown in the section User experience > Menu.
+    </p>
+
+    <div class="code-snippet">
+      <button class="btn btn-success btn-expandcode">Click to expand code</button>
+      <script src="https://gist.github.com/fewrocker/d65d8631806703db07cf822141e903c0.js"></script>
+      <br>
+      <button class="btn btn-success btn-expandcode btn-expandcode-bottom">Click to expand code</button>
+    </div>
+
+    <h2 class="burgershop-section-subtitle">
+      Burger customization (.js)
+    </h2>
+    <p class="burgershop-section-text">
+      <strong>Task:</strong> Handle the user interactions while customizing the burger by picking how much of each available ingredient he wants on his burger, as shown in the User Experience > Customizable burgers Section.
+    </p>
+
+    <div class="code-snippet">
+      <button class="btn btn-success btn-expandcode">Click to expand code</button>
+      <script src="https://gist.github.com/fewrocker/4bf4b517a9828b90d751b75e68b2e71b.js"></script>
+      <br>
+      <button class="btn btn-success btn-expandcode btn-expandcode-bottom">Click to expand code</button>
+    </div>
+
+
+
+
+
+  </div>
+</div>
