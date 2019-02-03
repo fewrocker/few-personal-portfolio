@@ -147,6 +147,19 @@ h1,h2,h3,h4,h5 {
   font-weight: 300;
 }
 
+.back-to-projects {
+  color: white;
+  font-size: 25px;
+
+  i {
+    margin-right: 10px;
+  }
+
+  &:hover {
+    color: rgba(200,200,200,1);
+  }
+}
+
 
 //Adaptacoes de tamanho de fonte para mobile
 @media screen and (max-width: 768px) {

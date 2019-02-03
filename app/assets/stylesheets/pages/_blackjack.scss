@@ -4,11 +4,19 @@
 
   padding-top: 50px;
 
-  padding-bottom: 50px;
+  padding-bottom: 100vh;
+
+  z-index: 1;
+
+  background: url(https://www.casino.org/blog/wp-content/uploads/Blackjack-Table-1.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .container-project-blackjack {
-  background-color: rgba(240,240,240,1);
+  background-color: rgba(255,200,200,0.9);
 
   border: 1px solid rgba(100,100,100,1);
 
@@ -20,15 +28,20 @@
 }
 
 .blackjack-title-logo {
-  width: 200px;
+  position: fixed;
+
+  z-index: 1;
 }
 
 .blackjack-title-logo-text {
   font-size: 50px;
-  color: white;
+  color: black;
   margin: 0;
   font-family: $bangers;
   margin: 0 0 50px 0;
+  background-color: rgba(255,100,100,1);
+  padding: 20px;
+
 }
 
 .blackjack-title-description {
@@ -48,7 +61,7 @@
 .blackjack-section-text {
   margin-top: 30px;
   font-size: 20px;
-  color: rgba(80,80,80,1);
+  color: rgba(20,20,20,1);
   text-align: justify;
   font-family: $roboto;
 }
@@ -114,7 +127,7 @@
 }
 
 .blackjack-filedownload {
-  color: rgba(100,100,100,1);
+  color: rgba(20,20,20,1);
   text-align: center;
   display: block;
   border: 1px solid black;
@@ -122,7 +135,7 @@
 
   &:hover {
     color: white;
-    background: rgba(100,100,100,1);
+    background: rgba(255,125,125,1);
     transition: 500ms ease;
     cursor: pointer;
   }

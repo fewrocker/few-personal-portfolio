@@ -5,6 +5,10 @@
 <!-- //// -->
 
 <div class="wrapper-page wrapper-project-burgershop-content">
+  <%= link_to "/projects", class:"back-to-projects" do %>
+    <i class="fas fa-chevron-left" style="margin-bottom: 10px;"></i> Back to projects
+  <% end %>
+
   <div class="container-page container-project-burgershop">
     <%= link_to "https://burger-shop-few.herokuapp.com/", target: "_blank" do %>
       <div class="burgershop-title-div text-center">
@@ -189,10 +193,9 @@
       <br>
       <button class="btn btn-success btn-expandcode btn-expandcode-bottom">Click to expand code</button>
     </div>
-
-
-
-
-
   </div>
+
+  <%= link_to "/projects", class:"back-to-projects" do %>
+    <i class="fas fa-chevron-left" style="margin-top: 60px;"></i> Back to projects
+  <% end %>
 </div>

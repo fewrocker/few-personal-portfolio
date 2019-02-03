@@ -19,7 +19,7 @@ function fadein(el,time) {
     opacity += 0.01
     el.style.opacity = opacity
 
-    if (el.style.opacity === 1) {
+    if (el.style.opacity > 1) {
       clearInterval(animation);
     }
   }, timetic);
@@ -89,10 +89,6 @@ if (projects) {
   });
 
   slidefromleft(projects,200,100,2000)
-
-
-
-
 }
 
 

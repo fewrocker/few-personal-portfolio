@@ -5,6 +5,10 @@
 <!-- //// -->
 
 <div class="wrapper-page wrapper-project-everything">
+  <%= link_to "/projects", class:"back-to-projects" do %>
+    <i class="fas fa-chevron-left"></i> Back to projects
+  <% end %>
+
   <div class="container-page container-project-everything">
 
     <%= link_to "https://www.every-thing.me/", target: "_blank" do %>
@@ -120,10 +124,335 @@
       <br>
       <button class="btn btn-success btn-expandcode btn-expandcode-bottom">Click to expand code</button>
     </div>
-
-
-
   </div>
+
+  <%= link_to "/projects", class:"back-to-projects" do %>
+    <i class="fas fa-chevron-left" style="margin-top: 60px;"></i> Back to projects
+  <% end %>
 </div>
+
+<canvas id="nokey" >
+</canvas>
+
+
+<style>
+  #nokey {
+    width: 100%;
+    background-color: #141414;
+    z-index: 1;
+
+    border-top: 2px solid rgba(220,220,220,0.05);
+  }
+  body {
+    overflow-x: hidden;
+    background-color: #141414;
+  }
+</style>
+
+<script>
+  // Everything - Canvas
+  // Random moving dots that get connected by lines when they get close
+  // This simulates the many users in the platform and the linking of similarity between them
+  // This is how everything recommends Animations!
+  // (This code was rewritten based on a code snippet from Matthew Willox)
+
+  // ------------------------------------------------------------------------
+  // Initiate canvas and get its dimensions
+  var canvas = document.getElementById('nokey'),
+     can_w = parseInt(canvas.getAttribute('width')),
+     can_h = parseInt(canvas.getAttribute('height')),
+     ctx = canvas.getContext('2d');
+
+  // Basic varibles for the elements that will be rendered on the cavass
+  // dot: you can customize color, size and opacity variation
+  var dot = {
+        x: 0,
+        y: 0,
+        v_x: 0,
+        v_y: 0,
+        r: 0,
+        opac: 1,
+        phase: 0
+     },
+     dot_color = {
+         r: 185,
+         g: 0,
+         b: 255
+     },
+     R = 3,
+     dots = [],
+     opac_f = 0.03,
+     opac_phase = 0,
+
+  // Line: you can customize width and what is the max distance for dots to be connected
+     line_wid = 0.8,
+     dist_limit = 260,
+     add_mouse_point = true,
+     mouse_in = false,
+     mouse_dot = {
+        x: 0,
+        y: 0,
+        v_x: 0,
+        v_y: 0,
+        r: 0,
+        type: 'mouse'
+     };
+
+
+
+  // Support functions - math
+  // Get a random item from an array
+  function randomArrayItem(arr){
+      return arr[Math.floor(Math.random() * arr.length)];
+  }
+  // Get a random number from interval
+  function randomNumFrom(min, max){
+      return Math.random()*(max - min) + min;
+  }
+
+  // Calculate distance between two points
+  function getDisOf(b1, b2){
+      var  delta_x = Math.abs(b1.x - b2.x),
+         delta_y = Math.abs(b1.y - b2.y);
+
+      return Math.sqrt(delta_x*delta_x + delta_y*delta_y);
+  }
+
+
+  // Support functions: movement
+  // Pick a dot that is present in the canvas
+  // Randomize a direction
+  function getRandomdot(){
+      var pos = randomArrayItem(['top', 'right', 'bottom', 'left']);
+      switch(pos){
+          case 'top':
+              return {
+                  x: moveWhere(can_w),
+                  y: -R,
+                  v_x: rollRandomSpeed('top')[0],
+                  v_y: rollRandomSpeed('top')[1],
+                  r: R,
+                  opac: 1,
+                  phase: randomNumFrom(0, 10)
+              }
+              break;
+          case 'right':
+              return {
+                  x: can_w + R,
+                  y: moveWhere(can_h),
+                  v_x: rollRandomSpeed('right')[0],
+                  v_y: rollRandomSpeed('right')[1],
+                  r: R,
+                  opac: 1,
+                  phase: randomNumFrom(0, 10)
+              }
+              break;
+          case 'bottom':
+              return {
+                  x: moveWhere(can_w),
+                  y: can_h + R,
+                  v_x: rollRandomSpeed('bottom')[0],
+                  v_y: rollRandomSpeed('bottom')[1],
+                  r: R,
+                  opac: 1,
+                  phase: randomNumFrom(0, 10)
+              }
+              break;
+          case 'left':
+              return {
+                  x: -R,
+                  y: moveWhere(can_h),
+                  v_x: rollRandomSpeed('left')[0],
+                  v_y: rollRandomSpeed('left')[1],
+                  r: R,
+                  opac: 1,
+                  phase: randomNumFrom(0, 10)
+              }
+              break;
+      }
+  }
+
+  // Random speed: randomize to get a value for speed given a direction
+  // Operating on cartesian coordinates:
+  // If direction is top, x speed can be both and y speed is positive
+  // If direction is right, x speed is negative and y speed can be both
+  // If direction is bottom, x speed can be both and y speed is negative
+  // If direction is left, x speed is positive and y speed can be both
+  function rollRandomSpeed(pos){
+      var  min = -1,
+         max = 1;
+      switch(pos){
+          case 'top':
+              return [randomNumFrom(min, max), randomNumFrom(0.1, max)];
+              break;
+          case 'right':
+              return [randomNumFrom(min, -0.1), randomNumFrom(min, max)];
+              break;
+          case 'bottom':
+              return [randomNumFrom(min, max), randomNumFrom(min, -0.1)];
+              break;
+          case 'left':
+              return [randomNumFrom(0.1, max), randomNumFrom(min, max)];
+              break;
+          default:
+              return;
+              break;
+      }
+  }
+
+  function moveWhere(length){
+      return Math.ceil(Math.random() * length);
+  }
+
+  // Support functions: generate dots
+  // Initiate dots
+  function newDots(){
+      Array.prototype.forEach.call(dots, function(b){
+         if(!b.hasOwnProperty('type')){
+             ctx.fillStyle = 'rgba('+dot_color.r+','+dot_color.g+','+dot_color.b+','+b.opac+')';
+             ctx.beginPath();
+             ctx.arc(b.x, b.y, R, 0, Math.PI*2, true);
+             ctx.closePath();
+             ctx.fill();
+         }
+      });
+  }
+
+  // Add dots if there a little dots
+  // Initiate a new dot on a position in the limits of the canvas
+  // (The dots appear on the outside and enter the inside of the canvas)
+  function addDot(){
+      if(dots.length < 100){
+          dots.push(getRandomdot());
+      }
+  }
+
+  // Support functions: Update dots
+  // Get all dots and update x velocity, y velocity and opacity
+  // Check how many dots are on canvas, and create more dots if value is less than minimum
+  function updateDots(){
+      var new_dots = [];
+      Array.prototype.forEach.call(dots, function(d){
+          d.x += d.v_x;
+          d.y += d.v_y;
+
+          if(d.x > -(50) && d.x < (can_w+50) && d.y > -(50) && d.y < (can_h+50)){
+             new_dots.push(d);
+          }
+
+          // opac change
+          d.phase += opac_f;
+          d.opac = Math.abs(Math.cos(d.phase));
+      });
+
+      dots = new_dots.slice(0);
+  }
+
+  // Draw lines
+  // Get pairs of dots and calculate the distance between them
+  // When distance falls below a threshold, connect the dots with a line
+  // The line gets stronger as the dots gets closer, this means when the ratio
+  // of (distance/dist_limit) approaches 0
+  function newLines(){
+      var fraction, opac;
+      for (var i = 0; i < dots.length; i++) {
+          for (var j = i + 1; j < dots.length; j++) {
+
+             fraction = getDisOf(dots[i], dots[j]) / dist_limit;
+
+             if(fraction < 1){
+                 opac = (1 - fraction).toString();
+
+                 ctx.strokeStyle = 'rgba(150,150,150,'+opac+')';
+                 ctx.lineWidth = line_wid;
+
+                 ctx.beginPath();
+                 ctx.moveTo(dots[i].x, dots[i].y);
+                 ctx.lineTo(dots[j].x, dots[j].y);
+                 ctx.stroke();
+                 ctx.closePath();
+             }
+          }
+      }
+  }
+
+  // Render the canvas
+  function render(){
+      ctx.clearRect(0, 0, can_w, can_h);
+
+      newDots();
+
+      newLines();
+
+      updateDots();
+
+      addDot();
+
+      window.requestAnimationFrame(render);
+  }
+
+  // Initiate the first dots
+  // input num: integer with how many dots to fill the canvas at start
+  // Initiate its positions (x,y) and speeds (v_x,v_y) and opacity (random)
+  // Initiate dot size (fixed)
+  function initDots(num){
+      for(var i = 1; i <= num; i++){
+          dots.push({
+              x: moveWhere(can_w),
+              y: moveWhere(can_h),
+              v_x: rollRandomSpeed('top')[0],
+              v_y: rollRandomSpeed('top')[1],
+              r: R,
+              opac: 1,
+              phase: randomNumFrom(0, 10)
+          });
+      }
+  }
+  // Init Canvas
+  function initCanvas(){
+      canvas.setAttribute('width', window.innerWidth);
+      canvas.setAttribute('height', window.innerHeight);
+
+      can_w = parseInt(canvas.getAttribute('width'));
+      can_h = parseInt(canvas.getAttribute('height'));
+  }
+  window.addEventListener('resize', function(e){
+      console.log('Window Resize...');
+      initCanvas();
+  });
+
+  // Start the animation
+  function goAnimation(){
+      initCanvas();
+      initDots(50);
+      window.requestAnimationFrame(render);
+  }
+  goAnimation();
+
+  // Mouse effect
+  // The mouse can interact with the canvas
+  // When the mouse enters the canvas, it acts as a new dot
+  // Other dots can be connected to the mouse with the same line linking logic between dots
+  canvas.addEventListener('mouseenter', function(){
+      mouse_in = true;
+      dots.push(mouse_dot);
+  });
+  canvas.addEventListener('mouseleave', function(){
+      mouse_in = false;
+      var new_dots = [];
+      Array.prototype.forEach.call(dots, function(b){
+          if(!b.hasOwnProperty('type')){
+              new_dots.push(b);
+          }
+      });
+      dots = new_dots.slice(0);
+  });
+  canvas.addEventListener('mousemove', function(e){
+      var e = e || window.event;
+      mouse_dot.x = e.pageX;
+      mouse_dot.y = e.pageY;
+  });
+
+</script>
 
 
