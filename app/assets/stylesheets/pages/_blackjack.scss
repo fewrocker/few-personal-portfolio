@@ -1,0 +1,130 @@
+.wrapper-project-blackjack-content {
+  background-color: black;
+  min-height: 100vh;
+
+  padding-top: 50px;
+
+  padding-bottom: 50px;
+}
+
+.container-project-blackjack {
+  background-color: rgba(240,240,240,1);
+
+  border: 1px solid rgba(100,100,100,1);
+
+  box-shadow: 1px 1px rgba(150,150,150,1);
+
+  padding: 30px 50px;
+
+  margin-bottom: 20px;
+}
+
+.blackjack-title-logo {
+  width: 200px;
+}
+
+.blackjack-title-logo-text {
+  font-size: 50px;
+  color: white;
+  margin: 0;
+  font-family: $bangers;
+  margin: 0 0 50px 0;
+}
+
+.blackjack-title-description {
+  font-size: 25px;
+  color: white;
+}
+
+.blackjack-section-title {
+  font-size: 40px;
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid rgba(150,150,150,1);
+  font-family: $bangers;
+}
+
+.blackjack-section-text {
+  margin-top: 30px;
+  font-size: 20px;
+  color: rgba(80,80,80,1);
+  text-align: justify;
+  font-family: $roboto;
+}
+
+.blackjack-text-title {
+  font-size: 25px;
+  color: black;
+  font-weight: normal;
+}
+
+.blackjack-gotosite-text {
+  font-size: 40px;
+  color: black;
+  font-family: $roboto;
+  letter-spacing: -2px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.blackjack-gotosite {
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+    transition: 300ms ease;
+  }
+}
+
+.blackjack-section-subtitle {
+  font-size: 25px;
+  color: black;
+}
+
+.blackjack-list {
+  list-style-type: circle;
+}
+
+.blackjack-list-item {
+  margin-top: 30px;
+  font-size: 22px;
+  color: black;
+  font-weight: lighter;
+  text-align: justify;
+  font-family: $roboto;
+  position: relative;
+  padding-left: 20px;
+}
+
+.blackjack-list-item:before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background: black;
+  left: 0;
+  top: 0;
+  transition: 300ms;
+}
+
+.blackjack-italics {
+  font-style: italic;
+  color: rgba(100,100,100,1);
+}
+
+.blackjack-filedownload {
+  color: rgba(100,100,100,1);
+  text-align: center;
+  display: block;
+  border: 1px solid black;
+  padding: 30px 0;
+
+  &:hover {
+    color: white;
+    background: rgba(100,100,100,1);
+    transition: 500ms ease;
+    cursor: pointer;
+  }
+}
+

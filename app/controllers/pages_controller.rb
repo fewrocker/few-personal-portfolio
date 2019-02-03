@@ -26,10 +26,17 @@ class PagesController < ApplicationController
     if params[:project] === 'everything'
       @page_title = 'Projects > Everything'
       @page_pic = "https://images.pexels.com/photos/814667/pexels-photo-814667.jpeg?cs=srgb&dl=asphalt-bicycle-daylight-814667.jpg&fm=jpg"
+    elsif params[:project] === 'spacewagons'
+      @page_title = 'Projects > Space Wagons'
+      @page_pic = "https://images.pexels.com/photos/814667/pexels-photo-814667.jpeg?cs=srgb&dl=asphalt-bicycle-daylight-814667.jpg&fm=jpg"
+    elsif params[:project] === 'blackjack'
+      @page_title = 'Projects > Blackjack'
+      @page_pic = "https://images.pexels.com/photos/814667/pexels-photo-814667.jpeg?cs=srgb&dl=asphalt-bicycle-daylight-814667.jpg&fm=jpg"
     elsif params[:project] === 'projects'
       @page_title = 'Projects'
       @page_pic = "https://images.pexels.com/photos/814667/pexels-photo-814667.jpeg?cs=srgb&dl=asphalt-bicycle-daylight-814667.jpg&fm=jpg"
     end
+
 
     if valid_page?
       render template: "pages/projects/#{params[:project]}"

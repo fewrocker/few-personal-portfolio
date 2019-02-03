@@ -31,9 +31,6 @@
     <p class="experiences-content experiences-education-when">2005 - 2011</p>
     <p class="experiences-content experiences-education-description">Top 6 High School in Brazil according to the official Ministry of Education ENEM Ranking as of 2011</p>
 
-
-
-
     <h1 class="page-subtitle">Experiences & skills</h1>
     <div class="middle">
       <div class="menu">
@@ -51,6 +48,9 @@
               <p class="experience-description">
                 During the these intensive 2 months, I was able to learn in-depth and in a practice oriented way the following technologies: HTML, CSS, Bootstrap, JavaScript ES2016, SQL, git, GitHub, Heroku and Ruby on Rails. I completed 360+ programming challenges and launched several web applications, and many can be seen on the projects tab.
               </p>
+              <%= link_to "download/experiences-wagon-syllabus.pdf", target: "_blank", class: 'experiences-file-link', target: :_blank do  %>
+                <i class="fa fa-file-download"></i>Download course syllabus
+              <% end %> <br>
               <%= link_to "#", data: {toggle: "modal", target: "#modal-experiences-wagon"}, class:"trabalhe-conosco-btn-link" do %>
                 <div class="btn experience-image-call"><i class="fas fa-camera"></i>See pictures</div>
               <% end %>
@@ -129,10 +129,39 @@
               <%= link_to "download/experiences-files-constellation-3.xlsx", target: "_blank", class: 'experiences-file-link', target: :_blank do  %>
                 <i class="fa fa-file-download"></i>DCF Valuation Model (pt-br)
               <% end %>
-
-              <h1 class="page-subsubtitle">Business, Finances & Marketing skills</h1>
-              <p class="experiences-content">Profitability analysis, ROI analysis, Pricing, Market Entry and New Products, Sales Funnel, Costumer Lifetime Value, Porter's Competitive Forces, Breakeven, Value chain, P&L and Income Statement, Cash Flow Statement, Valuation using DCF and Multiples</p>
             </div>
+
+            <div class="each-experience">
+              <h1 class="experience-title">
+                BS2 Hackathon
+              </h1>
+              <p class="experience-when">Jul 2018 </p>
+              <p class="experience-results">Results: 3rd place</p>
+              <p class="experience-description">
+                Hackathons are ultra intensive product development marathons in which teams have a short amount of time to develop a full product idea (problem, solution and details).
+              </p>
+              <p class="experience-description">
+                BS2 is former bank "Bonsucesso" that went through a complete rebranding and repositioning as a digital bank. BS2 promoted the Hackhathon so that the participants could develop and showcase ideas for the new digital banking operations.
+              </p>
+              <p class="experience-description">
+                My group developed the idea of bs2you, a peer-to-peer lending platform. The idea was very actual since positive legislation regarding that modality of lending was approved 2 months earlier. The group also explored the inclusion of minorities, after a sequence of interviews and surveys that showed how women and black people have a higher difficulty of borrowing money through traditional mechanisms.
+              </p>
+              <p class="experience-description">
+                The group was awarded overall 3rd place and best pitch. We were very happy about it, because the 2nd and 1st places were already established start-ups with closed teams, and my group arrived at the event without knowing eachother and had a very good chemistry.
+              </p>
+              <%= link_to "download/experiences-hackathon.pdf", target: "_blank", class: 'experiences-file-link', target: :_blank do  %>
+                <i class="fa fa-file-download"></i>Pitch deck (pt-br)
+              <% end %> <br>
+              <%= link_to "#", data: {toggle: "modal", target: "#modal-experiences-hackathon"}, class:"trabalhe-conosco-btn-link" do %>
+                <div class="btn experience-image-call"><i class="fas fa-camera"></i>See pictures</div>
+              <% end %>
+            </div>
+
+            <h1 class="page-subsubtitle">Business, Finances & Marketing skills</h1>
+            <p class="experiences-content">Profitability analysis, ROI analysis, Pricing, Market Entry and New Products, Sales Funnel, Costumer Lifetime Value, Porter's Competitive Forces, Breakeven, Value chain, P&L and Income Statement, Cash Flow Statement, Valuation using DCF and Multiples</p>
+
+            <h1 class="page-subsubtitle">Business, Finances & Marketing softwares</h1>
+            <p class="experiences-content">Microsoft Excel, Microsoft PowerPoint, PowerBI, Salesforce</p>
           </div>
         </li>
 
@@ -257,3 +286,28 @@
     </div>
   </div>
 </div>
+
+<% modal_count += 1 %>
+
+<div class="modal fade" id="modal-experiences-hackathon" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-images" role="document">
+    <div class="modal-content">
+      <div class="modal-body pic-modal-body">
+        <div class="experience-images">
+          <div class="experience-image-<%= modal_count %>-0 experience-image">
+            <%= image_tag "experiences-hackathon-1.png"%>
+            <p class="experience-caption">From left to right: Deyse, Gessé, Rafael, Jocelia and me. We met two days before presenting the 3rd best project!</p>
+          </div>
+        </div>
+
+<!--         <a href="#sl" class="left-slide-<%= modal_count %> left carousel-control left-carousel-control" role="button" data-slide="prev">
+          <span class=" glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        </a>
+        <a href="#sl" class="right-slide-<%= modal_count %> right carousel-control right-carousel-control" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        </a> -->
+      </div>
+    </div>
+  </div>
+</div>
+

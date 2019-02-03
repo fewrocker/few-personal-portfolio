@@ -1,0 +1,134 @@
+<%= render 'shared/title-bar' %>
+
+<!-- Normal navbar for mobile -->
+
+<!-- //// -->
+
+<div class="wrapper-page wrapper-project-blackjack-content">
+
+  <div class="blackjack-title-div text-center">
+    <%= image_tag "https://static.vecteezy.com/system/resources/previews/000/176/088/large_2x/vector-spades-symbol-on-dark-background-with-red-light.jpg", class:"blackjack-title-logo" %>
+    <h1 class="blackjack-title-logo-text">
+      Blackjack Analysis
+    </h1>
+  </div>
+
+  <div class="container-project-blackjack">
+
+      <h1 class="blackjack-section-title">
+        Task
+      </h1>
+      <p class="blackjack-section-text">
+        Write a computer program which arrives at the best possible strategy to play a game of Blackjack. I did this project when I was 14. So it is fun to see how I used to code back then!
+      </p>
+
+  </div>
+
+  <div class="container-project-blackjack">
+
+    <h1 class="blackjack-section-title">
+      Blackjack
+    </h1>
+
+    <h1 class="blackjack-section-subtitle">
+      The game
+    </h1>
+
+    <p class="blackjack-section-text">
+      Blackjack is the most played card game in casinos. This happens because it is a very dynamic and social game. On top of that, Blackjack is the fairest game you can play against the casino.
+    </p>
+
+    <p class="blackjack-section-text">
+      House edge is the mathematical advantage the house holds in any game, and therefore their expected profit over the long run with a game. If you were to play infinite rounds against the house, their profits over you would converge to the house edge
+    </p>
+
+    <p class="blackjack-section-text">
+      On Blackjack, the house edge varies with the rules applied. However, you can easily find combinations of house rules on all casinos which brings house edge down to 1%. Roulette, poker cash-games and slot machines usually has house edges of at least 5%.
+    </p>
+
+    <h1 class="blackjack-section-subtitle">
+      The basics
+    </h1>
+
+    <p class="blackjack-section-text">
+      Playing blackjack is fairly easy. Each player plays against the house, and not between themselves. Each player receives two cards whose values get added up to form a total in the player's hand. The dealer receives one card on the beggining so the players can have an idea of the dealer's starting hand. The goal is trying to get your total as close to 21 as possible, without going over, or "busting". If you bust, you lose this round to the dealer. Each player decide between standing (not asking for any more cards), hitting (ask for one more card), double down (doubling your bet but can only receive 1 extra card) or splitting (separate 1 game in 2 if your starting hand has two cards of the same value).
+    </p>
+
+    <p class="blackjack-section-text">
+      Then, the remaining players will play against the house. The dealer starts with his initial card and plays automatically and has to play exactly according to the rules, asking for cards until the total is between 17 and 21 or until he busts. The dealer only hits or stands.. If the dealer busts, everyone except the players that busted will win. If the dealer stays within 17 and 21, their hands will be compared to see who is closer to 21
+    </p>
+
+    <h1 class="blackjack-section-subtitle">
+      The perfect strategy
+    </h1>
+
+    <p class="blackjack-section-text">
+      There are few other details that affect gameplay, but these are the basic rules. Even though many players can play at the same time, the duels occur in parallel. There are many decks shuffled in play, and therefore we can assume the cards missing on the deck do not severelly impact the cards that will be dealt (more on that later). Therefore, for a combination of player cards and dealer faceup card, there will always be the optimal decision for the player based on mathematical odds.
+    </p>
+
+    <p class="blackjack-section-text">
+      The compilation of these optimal decisions is called the Basic Strategy. Every player can learn the basic strategy by memorizing a table, or sometimes even by bringing the table with you if the casino if friendly enough! Playing perfect basic strategy will ensure the house edge to drop to the 1% mentioned before. If you play by heart and without following the basic strategy, the house edge will increase!
+    </p>
+
+    <%= image_tag "projects-blackjack-2.png", class:"centered-image", style:"width: 40%;" %>
+
+    <p class="blackjack-section-text">
+      The basic strategy varies with the game rules, and the table above is the perfect strategy to be played on a common case. On this case, whenever the player has a 5 and a 7 and the dealer shows a 4, the player should stand. If the player has two 7s in his hand, he should always split against a dealer 6, but always hit against a dealer 9 to ensure maximum returns.
+    </p>
+
+    <p class="blackjack-section-text">
+      Therefore, the goal of this analysis is: write a program which simulates blackjack rounds on a given set of rules and derives the basic strategy for that set of rules. For this, the program will calculate what is the expected return for each player vs dealer combination if he decides for each of the possible actions, and then see which action yields the best returns.
+    </p>
+
+  </div>
+
+  <div class="container-project-blackjack">
+
+    <h1 class="blackjack-section-title">
+      Results
+    </h1>
+
+    <p class="blackjack-section-text">
+      All the analysis were compiled into a manual:
+    </p>
+
+    <%= link_to "/download/projects-blackjack.pdf", target: "_blank", class: 'blackjack-filedownload', target: :_blank do  %>
+      <i class="fa fa-file-download"></i>&nbsp;&nbsp;&nbsp;Download the Blackjack Analysis Manual
+    <% end %>
+
+    <p class="blackjack-section-text">
+      The program is a success! For any hand combiation, the suggested action perfectly coincides with the basic strategy card. For example, look at the calculated results for the hand A7:
+    </p>
+
+    <%= image_tag "projects-blackjack-3.png", class:"centered-image", style:"width: 60%;" %>
+
+    <p class="blackjack-section-text">
+      The graph shows expected results for each action (different lines) for different dealer hands (x-axis). The best result is given by which line is on top for that specific dealer upcard. The card "1" means "A". As you can see, the player should double-down if dealer shows 3-6, stand if dealer shows 7, 8 or 2, and hit if dealer shows 9, 10 or A. This matches the basic strategy rules:
+    </p>
+
+    <%= image_tag "projects-blackjack-4.png", class:"centered-image", style:"width: 60%;" %>
+
+    <p class="blackjack-section-text">
+      The analysis also gives some interesting insights. Playing blackjack with basic strategy feels good, because you are playing the game on a high level based on what you studied. But understanding the odds behind the hands will give you even more power: now you know that on an A7 vs 2, you actually can choose between standing and doubling down with the same expected returns. This gives opportunity for basic strategy deviations and following your instincts!
+    </p>
+
+    <h1 class="blackjack-section-title">
+      Code snippets
+    </h1>
+
+
+    <h2 class="blackjack-section-subtitle">
+      Blackjack simulation (.c)
+    </h2>
+    <p class="blackjack-section-text">
+      <strong>Task:</strong> Gather statistics for a given player hand vs dealer upcard combination. I wrote this code when I was 14 so it is fun to see how I used to code back then :)
+    </p>
+
+    <div class="code-snippet">
+      <button class="btn btn-success btn-expandcode">Click to expand code</button>
+      <script src="https://gist.github.com/fewrocker/6cccaf4fc65335c956914d0af0309c19.js"></script>
+      <br>
+      <button class="btn btn-success btn-expandcode btn-expandcode-bottom">Click to expand code</button>
+    </div>
+  </div>
+</div>
