@@ -206,3 +206,34 @@
   font-weight: 400;
 }
 
+.experiences-course-title {
+  font-family: $roboto;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgba(80,80,80,1);
+
+  margin: 0px 0 2px 0;
+}
+
+.experiences-course-when {
+  font-family: $roboto;
+  font-size: 18px;
+  font-weight: lighter;
+  color: rgba(125,125,125,1);
+
+  padding-left: 10px;
+
+  margin: 0px 0 10px 0;
+}
+
+.experiences-course-when:before {
+  content: "("
+}
+
+.experiences-course-when:after {
+  content: ")"
+}
+
+
+
+
