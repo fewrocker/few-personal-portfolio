@@ -1,0 +1,41 @@
+<!-- Desktop version -->
+<div class="title-banner page-desktop" style="background-image: linear-gradient(-45deg, rgba(0,0,0,1) 0%, rgba(0,36,61,1) 80%), url(<%= @page_link %>);">
+  <div class="title-banner-content">
+    <h1 class="title-banner-title"><%= @page_title %></h1>
+    <ul class="list-inline title-banner-list">
+      <li class="title-banner-list-item text-center">
+        <a href="/resume" class="<%= "title-banner-active" if params[:page] == "resume" %>">Resume</a>
+      </li>
+      <li class="title-banner-list-item text-center">
+        <a href="/projects" class="<%= "title-banner-active" if params[:page] == "projects" %>">Projects</a>
+      </li>
+      <li class="title-banner-list-item text-center">
+        <a href="/contact" class="<%= "title-banner-active" if params[:page] == "contact" %>">Contact</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Mobile version -->
+<div class="navbar page-mobile" style="background-image: linear-gradient(-45deg, rgba(0,0,0,1) 0%, rgba(0,36,61,1) 80%), url(<%= @page_link %>);">
+  <!-- Logo -->
+  <h1 class="title-banner-title"><%= @page_title %></h1>
+
+  <!-- Dropdown appearing on mobile only -->
+  <div class="navbar-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+        <li class="navbar-list-item text-center">
+          <a href="/resume" class="<%= "navbar-active" if params[:page] == "resume" %>">Resume</a>
+        </li>
+        <li class="navbar-list-item text-center">
+          <a href="/projects" class="<%= "navbar-active" if params[:page] == "projects" %>">Projects</a>
+        </li>
+        <li class="navbar-list-item text-center">
+          <a href="/contact" class="<%= "navbar-active" if params[:page] == "contact" %>">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

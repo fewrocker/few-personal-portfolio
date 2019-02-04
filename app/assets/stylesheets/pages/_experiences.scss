@@ -235,5 +235,14 @@
 }
 
 
+// Mobile adaptations
 
+@media screen and (max-width: 768px) {
+  .container-resume {
+    padding: 20px 15px;
+  }
 
+  .wrapper-resume {
+    padding: 0;
+  }
+}

@@ -1,8 +1,16 @@
 <div class="title-banner page-desktop" style="background-image: linear-gradient(-45deg, rgba(0,0,0,1) 0%, rgba(0,36,61,1) 80%), url(<%= @page_link %>);">
   <div class="title-banner-content">
     <h1 class="title-banner-title"><%= @page_title %></h1>
-    <%= render 'shared/list-links' %>
+    <ul class="list-inline title-bar-list">
+      <li class="title-bar-list-item text-center">
+        <a href="/resume" class="<%= "title-banner-active" if params[:page] == "resume" %>">Resume</a>
+      </li>
+      <li class="title-bar-list-item text-center">
+        <a href="/projects" class="<%= "title-banner-active" if params[:page] == "projects" %>">Projects</a>
+      </li>
+      <li class="title-bar-list-item text-center">
+        <a href="/contact" class="<%= "title-banner-active" if params[:page] == "contact" %>">Contact</a>
+      </li>
+    </ul>
   </div>
 </div>
-
-<p class="page-mobile" style="display: none;"></p>
