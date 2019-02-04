@@ -1,0 +1,63 @@
+.wrapper-project-spiraldynamics {
+  background-color: #141414;
+  min-height: 100vh;
+
+  padding-top: 50px;
+
+  padding-bottom: 150px;
+}
+
+.container-project-spiraldynamics {
+
+}
+
+.spiraldynamics-title-logo {
+  width: 400px;
+}
+
+.spiraldynamics-title-description {
+  font-size: 25px;
+  color: white;
+  padding-left: 200px;
+}
+
+.spiraldynamics-section-title {
+  font-size: 35px;
+  color: rgba(64,224,208,1);
+  margin-top: 100px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid rgba(150,150,150,1);
+  font-family: $roboto;
+}
+
+.spiraldynamics-section-text {
+  font-size: 20px;
+  color: white;
+  text-align: justify;
+  font-family: $roboto;
+}
+
+.spiraldynamics-text-title {
+  font-size: 25px;
+  color: rgba(64,224,208,1);
+}
+
+.spiraldynamics-gotosite-text {
+  font-size: 35px;
+  color: rgba(64,224,208,1);
+  font-family: $lobster;
+}
+
+.spiraldynamics-gotosite {
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+    transition: 300ms ease;
+  }
+}
+
+.spiraldynamics-section-subtitle {
+  font-size: 25px;
+  color: rgba(64,224,208,1);
+}

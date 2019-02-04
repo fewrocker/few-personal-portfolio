@@ -1,0 +1,86 @@
+<%= render 'shared/title-bar' %>
+
+<!-- Normal navbar for mobile -->
+
+<!-- //// -->
+
+<div class="wrapper-page wrapper-project-projects">
+  <%= link_to "/projects", class:"back-to-projects" do %>
+    <i class="fas fa-chevron-left"></i> Back to projects
+  <% end %>
+
+  <div class="container-page container-project-projects">
+
+    <%= link_to "https://www.every-thing.me/", target: "_blank" do %>
+      <div class="projects-title-div text-center">
+        <%= image_tag "", class:"projects-title-logo" %>
+        <p class="projects-title-description">
+          Get great recommendations, easily
+        </p>
+      </div>
+    <% end %>
+
+    <%= link_to "https://www.every-thing.me/", target: "_blank" do %>
+      <div class="projects-gotosite text-center">
+        <%= image_tag "", class:"centered-image", style:"width: 80%;" %>
+        <p class="projects-gotosite-text">Go to website!</p>
+      </div>
+    <% end %>
+
+    <h1 class="spiraldynamics-section-title">
+      Task
+    </h1>
+    <p class="projects-section-text">
+      A friend needed to build a quiz for her research project. Instead of going with the usual Google Forms to get the answers and Excel to do the quiz result logics, I suggested a Rails approach.
+    </p>
+
+    <h1 class="spiraldynamics-section-title">
+      What is Spiral Dynamics?
+    </h1>
+    <p class="projects-section-text">
+      Spiral Dynamics is seen as the ultimate model of human psychological development, created by Clare W. Graves and perfected by other researches such as Don Edward Beck and Christopher Cowan.
+    </p>
+    <p class="projects-section-text">
+      The researchers performed thousands of interviews with individuals around the word, trying to understand what was their world view and their main values. The results show
+    </p>
+
+
+    <h1 class="projects-section-title">
+      Code snippets
+    </h1>
+
+    <h2 class="projects-section-subtitle">
+      Building the recommendation list (.rb)
+    </h2>
+    <p class="projects-section-text">
+      <strong>Task:</strong> Build a list of movie recommendations to the user based on the similarity of his list and the list of most similar users
+    </p>
+
+    <div class="code-snippet">
+      <button class="btn btn-success btn-expandcode">Click to expand code</button>
+      <script src="https://gist.github.com/fewrocker/d7fd25990785c15a066714dcf00931eb.js" class="code-snippet"></script>
+      <br>
+      <button class="btn btn-success btn-expandcode btn-expandcode-bottom">Click to expand code</button>
+    </div>
+
+    <h2 class="projects-section-subtitle">
+      Managing the battles (.js)
+    </h2>
+    <p class="projects-section-text">
+      <strong>Task:</strong> The battlepage shows 2 movies for the user to pick. However, the user might have not seen one of these. We solve this problem by having Rails send a list of 10 movies to each of the 2 positions. If user hasn't seen one, he can click the "Haven't seen" button, and switch to the next movie. The app also has to update the Rails forms values. The app stores movies the user hasn't seen, so it doesn't appear again soon, and so that it can be recommended to the user later on. Also, when the user votes, the app needs to understand which films where battling during the time of decision
+    </p>
+
+    <div class="code-snippet">
+      <button class="btn btn-success btn-expandcode">Click to expand code</button>
+      <script src="https://gist.github.com/fewrocker/60e9af00b9b9b562e5a075cf4cafcd04.js"></script>
+      <br>
+      <button class="btn btn-success btn-expandcode btn-expandcode-bottom">Click to expand code</button>
+    </div>
+  </div>
+
+  <%= link_to "/projects", class:"back-to-projects" do %>
+    <i class="fas fa-chevron-left" style="margin-top: 60px;"></i> Back to projects
+  <% end %>
+</div>
+
+
