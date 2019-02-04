@@ -137,16 +137,19 @@
 
 @media screen and (max-width: 768px) {
   .projects-card {
-    height: 50vh;
+    height: 90vh;
+  }
+
+  .projects-card:hover > .projects-section  {
+    opacity: 0.1;
+    transition: 300ms ease;
+  }
+
+  .projects-description {
+    padding: 0 20px;
   }
 }
 
-
-.project-content {
-  flex: 0 0 70%;
-
-  padding-left: 2%;
-}
 
 .project-title {
   font-size: 24px;
@@ -181,7 +184,12 @@
 
 
 
-// Projects elements
+
+
+
+
+
+// Projects elements - common elements
 
 .wrapper-project-projects {
   background-color: #141414;
@@ -215,11 +223,17 @@
   font-family: $lobster;
 }
 
+.projects-section  {
+  margin-bottom: 10px;
+}
+
 .projects-section-text {
-  font-size: 20px;
-  color: white;
-  text-align: justify;
+  font-size: 30px;
+  text-align: center;
   font-family: $roboto;
+
+  display: block;
+  margin: 0 auto;
 }
 
 .projects-text-title {
