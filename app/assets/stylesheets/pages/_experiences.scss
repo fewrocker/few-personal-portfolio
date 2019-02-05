@@ -239,7 +239,7 @@
 
 @media screen and (max-width: 768px) {
   .container-resume {
-    padding: 20px 15px;
+    padding: 40px 30px;
   }
 
   .wrapper-resume {
@@ -266,9 +266,50 @@
     width: 100%;
   }
 
-  .experiences-course-when {
-    display: block;
+  .experiences-myinfos {
+    font-size: 16px;
+  }
 
-    padding-left: 0px;
+  .experiences-content {
+    font-size: 18px;
+  }
+
+  .experiences-education-title {
+    font-size: 20px;
+  }
+
+  .experiences-education-when {
+    font-size: 18px;
+  }
+
+  .experiences-education-description {
+    font-family: $nanum;
+    font-size: 20px;
+    font-weight: lighter;
+    color: rgba(100,100,100,1);
+    text-align: justify;
+
+    margin: 5px 0 15px;
+  }
+
+  .experience-title {
+    font-size: 25px;
+  }
+
+  .experience-when {
+    font-size: 18px;
+  }
+
+  .experience-description {
+    font-size: 18px;
+  }
+
+  .experience-results {
+    font-size: 18px;
+  }
+
+
+  .experiences-language-name {
+    font-size: 18px;
   }
 }
