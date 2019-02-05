@@ -209,6 +209,26 @@
   .project-cta {
     font-size: 18px;
   }
+
+  .projects-mobile-friendly {
+    font-size: 18px;
+    color: white;
+    font-weight: normal;
+    background: rgb(18, 168, 33);
+    padding: 10px 10px;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .projects-mobile-unfriendly {
+    font-size: 18px;
+    color: white;
+    font-weight: normal;
+    background: rgb(219, 76, 76);
+    padding: 10px 10px;
+    text-align: center;
+    margin-top: 30px;
+  }
 }
 
 
