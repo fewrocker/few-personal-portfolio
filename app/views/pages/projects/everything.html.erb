@@ -181,7 +181,7 @@
 
   // Line: you can customize width and what is the max distance for dots to be connected
      line_wid = 0.8,
-     dist_limit = 260,
+     dist_limit = window.innerWidth > 768 ? 260 : 100,
      add_mouse_point = true,
      mouse_in = false,
      mouse_dot = {
@@ -192,8 +192,6 @@
         r: 0,
         type: 'mouse'
      };
-
-
 
   // Support functions - math
   // Get a random item from an array
