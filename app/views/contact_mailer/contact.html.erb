@@ -1,0 +1,44 @@
+<style>
+  .content-title {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .item-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .item-content {
+    font-size: 16px;
+    font-weight: lighter !important;
+  }
+
+  .contato-assunto {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .contato-mensagem {
+    font-size: 16px;
+  }
+
+</style>
+
+<p><strong><span class="content-title" style="font-size: 20px">Contact email sent via portfolio website</span></span></p>
+<p><span class="item-title" style="font-size: 18px;"><strong>Contact fill time:</strong></span> <span class="item-content" style="font-size: 16px;"><%= @contact.created_at.strftime("%d/%m/%Y") %>, <%= @contact.created_at.strftime("%H:%M") %></span></p>
+
+<br>
+
+<span class="content-title" style="font-size: 18px;"><strong>Contact info:</strong></span>
+
+<p><span class="item-title" style="font-size: 18px;"><strong>Name:</strong></span> <span class="item-content" style="font-size: 16px;"><%= @contact.nAme %></span></p>
+<p><span class="item-title" style="font-size: 18px;"><strong>Email:</strong></span> <span class="item-content" style="font-size: 16px;"><%= @contact.email %></span> &nbsp;&nbsp; <span class="item-title" style="font-size: 18px;">Phone:</span> <span class="item-content" style="font-size: 16px;"><strong><%= @contact.phone %></strong></span></p>
+
+<br>
+
+<p><span class="contato-assunto" style="font-size: 18px;"><strong><%= @contact.subject%></strong></span></p>
+
+<p class="contato-mensagem" style="font-size: 16px;">
+  <%= @contact.message %>
+</p>

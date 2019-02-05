@@ -1,0 +1,94 @@
+.wrapper-contact {
+  background: white !important;
+
+  padding: 40px 200px 40px 200px !important;
+}
+
+.contact-info-header {
+  color: $mid-blue;
+  font-size: 1.4em;
+}
+
+.contact-info-content {
+  color: rgba(80,80,80,1);
+  font-size: 0.9em;
+  font-weight: 300;
+
+  margin-bottom: 10px;
+}
+
+.contact-infos {
+  text-align: left;
+}
+
+.alert-email-sent {
+  border: 3px solid rgba(30,130,60,1);
+  background: rgba(80,250,120,1);
+
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  p {
+    margin: 0;
+  }
+}
+
+.modal-trabalhe-conosco-title {
+  color: $mid-blue;
+  text-weight: bold;
+}
+
+.modal-body-par {
+  color: rgba(100,100,100,1);
+  text-align: justify;
+  padding: 10px 20px;
+  font-weight: lighter;
+}
+
+
+
+.list-socialmedia {
+  display: block;
+  margin: 0 auto;
+
+  a:active, a:link, a:visited, a:hover {
+    text-decoration: none;
+  }
+
+  li {
+    width: 30%;
+  }
+}
+
+.socialmedia-link {
+  width: 30%;
+}
+
+.socialmedia-item  {
+  width: 100%;
+
+  border: 1px solid $mid-blue;
+  border-radius: 5px;
+
+  text-align: center;
+
+  font-size: 40px;
+  color: $mid-blue;
+  background: white;
+
+  &:hover {
+    background: $mid-blue;
+    color: white;
+  }
+
+
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper-contact {
+    padding: 40px 20px 80px 20px !important;
+  }
+}

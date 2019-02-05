@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
 
+  resources :contact, only: [:create]
+
   Rails.application.routes.draw do
     get "/:page" => "pages#show"
   end

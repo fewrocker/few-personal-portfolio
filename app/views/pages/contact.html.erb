@@ -1,0 +1,48 @@
+<%= render 'shared/navbar' %>
+
+<div class="wrapper-page wrapper-contact">
+  <div class="container-page">
+
+    <% if params[:email] == 'sent' %>
+      <div class="alert-email-sent">
+        <p>Your e-mail was successfully sent! I will be in touch soon</p>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <div class="col-md-6 col-xs-12">
+        <h1 class="page-title">Contact me</h1>
+        <%= render 'shared/contactform' %>
+      </div>
+      <div class="col-md-6 col-xs-12 contact-infos">
+        <h1 class="page-title">Connect</h1>
+
+        <ul class="list-inline list-socialmedia">
+          <li>
+            <%= link_to "https://github.com/fewrocker", class: "socialmedia-link", target: "_blank" do %>
+              <div class="socialmedia-item">
+                <i class="fab fa-github"></i>
+              </div>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "https://www.linkedin.com/in/felipemdsantos/", class: "socialmedia-link", target: "_blank" do %>
+              <div class="socialmedia-item">
+                <i class="fab fa-linkedin-in"></i>
+              </div>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "https://www.instagram.com/santosfelipem/", class: "socialmedia-link", target: "_blank" do %>
+              <div class="socialmedia-item">
+                <i class="fab fa-instagram"></i>
+              </div>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+

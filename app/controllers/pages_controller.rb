@@ -12,6 +12,9 @@ class PagesController < ApplicationController
     elsif params[:page] === 'projects'
       @page_title = 'Projects'
       @page_pic = "https://images.pexels.com/photos/814667/pexels-photo-814667.jpeg?cs=srgb&dl=asphalt-bicycle-daylight-814667.jpg&fm=jpg"
+    elsif params[:page] === 'contact'
+      @page_title = 'Contact'
+      @page_pic = "https://images.pexels.com/photos/814667/pexels-photo-814667.jpeg?cs=srgb&dl=asphalt-bicycle-daylight-814667.jpg&fm=jpg"
     end
 
     # Renderiza paginas do tipo /(nome_da_pagina)

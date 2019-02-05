@@ -1,0 +1,181 @@
+<!-- This form includes validations written down below that gives feedback to user on submit -->
+<!-- Current validations: all fields required -->
+<!-- The styling is already on this file -->
+
+<style>
+.contact-form {
+  margin-bottom: 50px;
+}
+
+.contact-form-field {
+  border: none;
+  box-shadow: none;
+
+  height: 4em;
+
+  margin-bottom: 10px;
+
+  border-bottom: 2px solid rgba(23,78,138,1);
+}
+
+.contact-form-field::placeholder {
+  font-weight: 300;
+  color: rgba(80,80,80,0.5);
+}
+
+#contact-mensagem {
+  min-height: 150px;
+  min-width: 100%;
+  max-height: 150px;
+  max-width: 100%;
+}
+
+.contact-form-sendbtn {
+  margin-top: 50px;
+  width: 300px;
+}
+</style>
+
+<form action="/contact" method="post" class="mb-4 contact-form" id="contact-form" onsubmit="return validateForm()">
+
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-11 mb-md-0 mb-5">
+                <!--Grid row-->
+                <div class="row contact-form-row">
+                    <div class="col-xs-12">
+                        <div class="md-form mb-0">
+                            <input type="text" id="contact-name" name="name" class="form-control contact-form-field" placeholder="Name">
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row contact-form-row">
+
+                    <!--Grid column-->
+                    <div class="col-xs-12 col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="contact-email" name="email" class="form-control contact-form-field" placeholder="Email">
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-xs-12 col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="contact-phone" name="phone" class="form-control contact-form-field" placeholder="Phone">
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row contact-form-row">
+                    <div class="col-xs-12">
+                        <div class="md-form mb-0">
+                            <input type="text" id="contact-subject" name="subject" class="form-control contact-form-field" placeholder="Subject">
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row contact-form-row">
+
+                    <!--Grid column-->
+                    <div class="col-xs-12">
+
+                        <div class="md-form">
+                            <textarea type="text" id="contact-message" name="message" rows="2" class="form-control md-textarea contact-form-field" placeholder="Message"></textarea>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+
+            </form>
+
+            <div class="text-center text-md-left">
+              <input type="submit" class="btn btn-primary contact-form-sendbtn" value="Send message">
+            </div>
+
+        </div>
+
+    </div>
+
+</form>
+
+
+<!-- The code below handles the validations on the form -->
+
+<style>
+.invalid {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+
+  border-bottom: 2px solid red;
+  background: rgba(255,220,220,1);
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+</style>
+
+
+<script>
+
+// Fields that will be validated
+name = document.getElementById('contact-name')
+email = document.getElementById('contact-email')
+phone = document.getElementById('contact-phone')
+subject = document.getElementById('contact-subject')
+message = document.getElementById('contact-message')
+formFields = document.getElementsByClassName('contact-form-field')
+
+// Validation ends when input is focused
+Array.prototype.forEach.call(formFields, function(el) {
+  el.addEventListener('focus', function() {
+    el.classList.remove('invalid')
+  });
+});
+
+function validateForm() {
+  validationResult = true
+
+  // Requirement validations
+  // Add conditions that make validationResult false when not met
+  Array.prototype.forEach.call(formFields, function(field) {
+    if (field.value == "") {
+      field.classList.add('invalid')
+      validationResult = false
+    }
+  });
+
+  return validationResult
+}
+
+</script>

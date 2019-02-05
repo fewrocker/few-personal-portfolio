@@ -3,6 +3,19 @@ Rails.application.configure do
   config.webpacker.check_yarn_integrity = false
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Gmail configuration
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: "few-personal-portfolio.herokuapp.com" }
+  ActionMailer::Base.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: 'few-personal-portfolio.herokuapp.com',
+    user_name: ENV['GMAIL_ACC'],
+    password: ENV['GMAIL_PASS'],
+    authentication: :login,
+    enable_starttls_auto: true
+  }
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
