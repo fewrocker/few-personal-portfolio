@@ -70,7 +70,7 @@
       The compilation of these optimal decisions is called the Basic Strategy. Every player can learn the basic strategy by memorizing a table, or sometimes even by bringing the table with you if the casino if friendly enough! Playing perfect basic strategy will ensure the house edge to drop to the 1% mentioned before. If you play by heart and without following the basic strategy, the house edge will increase!
     </p>
 
-    <%= image_tag "projects-blackjack-2.png", class:"centered-image", style:"width: 40%;" %>
+    <%= image_tag "projects-blackjack-2.png", class:"blackjack-basicstrategy-image" %>
 
     <p class="blackjack-section-text">
       The basic strategy varies with the game rules, and the table above is the perfect strategy to be played on a common case. On this case, whenever the player has a 5 and a 7 and the dealer shows a 4, the player should stand. If the player has two 7s in his hand, he should always split against a dealer 6, but always hit against a dealer 9 to ensure maximum returns.
@@ -100,13 +100,13 @@
       The program is a success! For any hand combiation, the suggested action perfectly coincides with the basic strategy table. For example, look at the calculated results for the hand A7:
     </p>
 
-    <%= image_tag "projects-blackjack-3.png", class:"centered-image", style:"width: 60%;" %>
+    <%= image_tag "projects-blackjack-3.png", class:"centered-image-small" %>
 
     <p class="blackjack-section-text">
       The graph shows expected results for each action (different lines) for different dealer hands (x-axis). The best result is given by which line is on top for that specific dealer upcard. The card "1" means "A". As you can see, the player should double-down if dealer shows 3-6, stand if dealer shows 7, 8 or 2, and hit if dealer shows 9, 10 or A. This matches the basic strategy rules:
     </p>
 
-    <%= image_tag "projects-blackjack-4.png", class:"centered-image", style:"width: 60%;" %>
+    <%= image_tag "projects-blackjack-4.png", class:"centered-image-small"%>
 
     <p class="blackjack-section-text">
       The analysis also gives some interesting insights. Playing blackjack with basic strategy feels good, because you are playing the game on a high level based on what you studied. But understanding the odds behind the hands will give you even more power: now you know that on an A7 vs 2, you actually can choose between standing and doubling down with the same expected returns. This gives opportunity for basic strategy deviations and following your instincts!

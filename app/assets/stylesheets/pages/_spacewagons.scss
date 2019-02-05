@@ -20,7 +20,7 @@
 
 @media screen and (max-width: 768px) {
   .wrapper-project-spacewagons {
-    padding: 100px 25px 40px 25px;
+    padding: 50px 25px 40px 25px;
   }
 }
 
@@ -83,8 +83,80 @@
 
 .spacewagons-section-gameplay-title {
   color: white;
+  font-size: 30px;
 }
 
 .carousel-control-spacewagons {
   font-size: 80px !important;
+}
+
+.spacewagons-days-highlight {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.spacewagons-modal-image {
+  width: 100% !important;
+}
+
+@media screen and (max-width: 768px) {
+  .spacewagons-title-logo {
+    width: 300px;
+    margin-top: 70px;
+  }
+
+  .spacewagons-title-description {
+    font-size: 22px;
+    margin-top: 30px;
+  }
+
+  .spacewagons-section-title {
+    font-size: 26px;
+    color: $spacewagons-green;
+    text-transform: uppercase;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: $encode-sans;
+  }
+
+  .spacewagons-section-text {
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: white;
+    text-align: justify;
+    font-family: $encode-sans;
+  }
+
+  .spacewagons-text-title {
+    font-size: 25px;
+    color: $spacewagons-green;
+  }
+
+  .spacewagons-gotosite-text {
+    font-size: 26px;
+    letter-spacing: 1px;
+    color: $spacewagons-green;
+    font-family: $encode-sans;
+  }
+
+  .spacewagons-days-highlight {
+    font-size: 25px;
+  }
+
+  .spacewagons-section-subtitle {
+    font-size: 25px;
+  }
+
+  .spacewagons-section-gameplay-title {
+    font-size: 20px;
+  }
+
+  .carousel-control-spacewagons {
+    font-size: 40px !important;
+  }
+
+  .spacewagons-modal-image {
+    width: 100% !important;
+    height:  40% !important;
+  }
 }

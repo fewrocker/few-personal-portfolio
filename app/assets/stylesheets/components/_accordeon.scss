@@ -81,3 +81,13 @@
 }
 
 
+
+@media screen and (max-width: 768px) {
+  .each-experience {
+    padding: 16px 0px;
+  }
+
+  .each-experience:before {
+    width: 0px;
+  }
+}

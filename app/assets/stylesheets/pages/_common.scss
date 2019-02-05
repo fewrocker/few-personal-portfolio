@@ -6,6 +6,25 @@ h1,h2,h3,h4,h5 {
   font-family: $roboto;
 }
 
+// Desktop, mobile elements
+@media screen and (min-width: 768px) {
+  .page-desktop, .element-desktop {
+    display: '';
+  }
+  .page-mobile, .element-mobile, {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page-desktop, .element-desktop {
+    display: none;
+  }
+  .page-mobile, .element-mobile, {
+    display: '';
+  }
+}
+
 // Wrappers and containers
 
 .wrapper-page {
@@ -214,15 +233,39 @@ h1,h2,h3,h4,h5 {
       text-align:  justify;
     }
   }
+
+  .back-to-projects {
+    font-size: 16px;
+  }
 }
 
 .centered-image {
-  width: 100%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   display: block;
   margin-top: 50px;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-top: 50px;
+  }
 }
+
+.centered-image-small {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 50px;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-top: 50px;
+  }
+}
+
+
 
 .gist {
   margin-top: 20px;
