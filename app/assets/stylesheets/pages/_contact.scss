@@ -1,7 +1,7 @@
 .wrapper-contact {
   background: white !important;
 
-  padding: 40px 200px 40px 200px !important;
+  padding: 40px 200px 0px 200px !important;
 }
 
 .contact-info-header {
@@ -22,7 +22,6 @@
 }
 
 .alert-email-sent {
-  border: 3px solid rgba(30,130,60,1);
   background: rgba(80,250,120,1);
 
   padding: 10px;
@@ -30,6 +29,8 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+
+  margin-bottom: 10px;
 
   p {
     margin: 0;
