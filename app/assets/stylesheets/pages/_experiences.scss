@@ -234,6 +234,27 @@
   content: ")"
 }
 
+.resume-download-link {
+  color: $mid-blue;
+  text-align: center;
+  display: block;
+  border: 1px solid black;
+  padding: 30px 0;
+  margin-top: 50px;
+
+  i {
+    font-size: 30px;
+    margin-right: 20px;
+  }
+
+  &:hover {
+    color: white;
+    background: $mid-blue;
+    transition: 500ms ease;
+    cursor: pointer;
+  }
+}
+
 
 // Mobile adaptations
 
