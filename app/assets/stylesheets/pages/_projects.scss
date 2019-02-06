@@ -73,13 +73,21 @@
 }
 
 .projects-card:hover > .projects-description  {
-  opacity: 1;
   transition: 300ms ease;
 }
 
-.projects-card:hover > .projects-image {
-  opacity: 0.1;
+// Hover effects to show details on desktop
+// The animations on mobile are handled with javascript
+@media screen and (min-width: 768px) {
+  .projects-card:hover > .projects-description  {
+    opacity: 1;
+  }
+
+  .projects-card:hover > .projects-image {
+    opacity: 0.1;
+  }
 }
+
 
 .projects-image {
   width: 100%;
@@ -164,6 +172,24 @@
   color: $blue;
 }
 
+.projects-seemore-mobile {
+  margin: 0;
+
+  position: absolute;
+  top: 10px;
+  right: 0;
+
+  width: 100%;
+
+  color: rgba(100,100,100,1);
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: lighter;
+  text-align: center;
+
+  z-index: 99;
+}
+
 
 @media screen and (max-width: 768px) {
   .projects-mobile-info {
@@ -181,11 +207,6 @@
 
   .projects-card {
     height: 100vh;
-  }
-
-  .projects-card:hover > .projects-section  {
-    opacity: 0.1;
-    transition: 300ms ease;
   }
 
   .projects-description {
@@ -303,3 +324,5 @@
   font-size: 25px;
   color: #A300FF;
 }
+
+

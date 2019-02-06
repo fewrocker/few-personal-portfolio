@@ -1,14 +1,14 @@
 <%= render 'shared/navbar' %>
 
-<p class="projects-mobile-info element-mobile">
-  Touch and hold on top of a project to see additional info
-</p>
+<div class="page-desktop">
+
+<% project_no = 0 %>
 
 <div class="wrapper-page wrapper-projects">
   <div class="row row-projects">
-    <div class="col-xs-12 col-md-6  col-projects">
-      <%= link_to "https://www.hrdengenharia.com.br/home", target: "_blank" do %>
-        <div class="projects-card" style="background-color: rgba(41,88,142,1)">
+    <div class="col-xs-12 col-md-6 col-projects">
+      <%= link_to "https://www.hrdengenharia.com.br/home", target:"_blank", class:"project-link-#{project_no} projects-link" do %>
+        <div class="project-card-<%="#{project_no}"%>  projects-card" style="background-color: rgba(41,88,142,1)">
           <div class="projects-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0) 0%, rgba(0,36,61,0) 50%), url(<%= asset_path("logo-white-background.png") %>);">
           </div>
           <div class="projects-section">
@@ -35,9 +35,11 @@
       <% end %>
     </div>
 
+    <% project_no += 1 %>
+
     <div class="col-xs-12 col-md-6  col-projects">
-      <%= link_to "/projects/everything" do %>
-        <div class="projects-card" style="background-color: rgba(245,221,255,1)">
+      <%= link_to "/projects/everything", class:"project-link-#{project_no} projects-link" do %>
+        <div class="project-card-<%="#{project_no}"%>  projects-card" style="background-color: rgba(245,221,255,1)">
           <div class="projects-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0) 0%, rgba(0,36,61,0) 50%), url(<%= asset_path("projects-everything.png") %>); background-size: 40%;">
           </div>
           <div class="projects-section">
@@ -63,9 +65,11 @@
       <% end %>
     </div>
 
+    <% project_no += 1 %>
+
     <div class="col-xs-12 col-md-6  col-projects">
-      <%= link_to "/projects/spacewagons" do %>
-        <div class="projects-card" style="background-color: rgba(80,80,80,1)">
+      <%= link_to "/projects/spacewagons", class:"project-link-#{project_no} projects-link" do %>
+        <div class="project-card-<%="#{project_no}"%> projects-card" style="background-color: rgba(80,80,80,1)">
           <div class="projects-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0) 0%, rgba(0,36,61,0) 50%), url(<%= asset_path("projects-spacewagons.png") %>); background-size: 60%;">
           </div>
           <div class="projects-section text-center">
@@ -91,9 +95,11 @@
       <% end %>
     </div>
 
+    <% project_no += 1 %>
+
     <div class="col-xs-12 col-md-6  col-projects">
-      <%= link_to "/projects/burgershop" do %>
-        <div class="projects-card" style="background-color: #FF9696">
+      <%= link_to "/projects/burgershop", class:"project-link-#{project_no} projects-link" do %>
+        <div class="project-card-<%="#{project_no}"%>  projects-card" style="background-color: #FF9696">
           <div class="projects-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0) 0%, rgba(0,36,61,0) 50%), url(<%= asset_path("projects-burgershop.png") %>); background-size: 50%;">
           </div>
           <div class="projects-section">
@@ -119,9 +125,11 @@
       <% end %>
     </div>
 
+    <% project_no += 1 %>
+
     <div class="col-xs-12 col-md-6  col-projects">
-      <%= link_to "download/projects-footballneuralnetworks-felipe.pdf" do %>
-        <div class="projects-card" style="background-color: rgb(253, 255, 178)">
+      <%= link_to "download/projects-footballneuralnetworks-felipe.pdf", class:"project-link-#{project_no} projects-link" do %>
+        <div class="project-card-<%="#{project_no}"%>  projects-card" style="background-color: rgb(253, 255, 178)">
           <div class="projects-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0) 0%, rgba(0,36,61,0) 50%), url(http://jhnet.co.uk/projects/figures/neural_network/neural_network.png); background-size: 70%;">
           </div>
           <div class="projects-section">
@@ -147,9 +155,11 @@
       <% end %>
     </div>
 
+    <% project_no += 1 %>
+
     <div class="col-xs-12 col-md-6  col-projects">
-      <%= link_to "/projects/blackjack" do %>
-        <div class="projects-card" style="background-color: rgb(39, 206, 74)">
+      <%= link_to "/projects/blackjack", class:"project-link-#{project_no} projects-link" do %>
+        <div class="project-card-<%="#{project_no}"%>  projects-card" style="background-color: rgb(39, 206, 74)">
           <div class="projects-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0) 0%, rgba(0,36,61,0) 50%), url(<%= asset_path("projects-blackjack-spd.png") %>); background-size: 40%;">
           </div>
           <div class="projects-section">
@@ -176,6 +186,198 @@
     </div>
   </div>
 </div>
+
+</div>
+
+
+<!-- ----------------------------------------------------- -->
+<!-- ----------------------------------------------------- -->
+<!-- ----------------------mobile------------------------- -->
+<!-- ----------------------------------------------------- -->
+<!-- ----------------------------------------------------- -->
+
+<div class="page-mobile">
+
+<% project_no = 0 %>
+
+<p class="projects-mobile-info element-mobile">
+  Click once to see project details, then click again to open project
+</p>
+
+<div class="wrapper-page wrapper-projects">
+  <div class="row row-projects">
+    <div class="col-xs-12 col-md-6 col-projects">
+      <div class="project-card-<%="#{project_no}"%>  projects-card" style="background-color: rgba(41,88,142,1)">
+        <div class="projects-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0) 0%, rgba(0,36,61,0) 50%), url(<%= asset_path("logo-white-background.png") %>);">
+        </div>
+        <div class="projects-section">
+          <p class="projects-section-text" style="color: rgba(220,220,220,1)">Freelance Institutional Website</p>
+        </div>
+        <div class="projects-description">
+          <div class="project-description-items">
+            <h1 class="project-title" style="color: rgba(240,240,240,1)">
+              HRD Engenharia Institutional Website
+            </h1>
+            <h2 class="project-tags" style="color: rgba(240,240,240,1)">
+              Freelance &nbsp; Institutional &nbsp; Mobile-friendly &nbsp; Ruby on Rails
+            </h2>
+            <p class="project-description" style="color: rgba(240,240,240,1)">
+              Professional website designed from scratch for the company HRD Engenharia, which offers advanced structural analysis of assets for industrial companies. The website was given a modern look with a slideshow on the homepage, clean Javascript animations, has a contact form and maps integration.
+            </p>
+            <p class="project-cta">
+              Click to visit website
+            </p>
+            <p class="projects-mobile-friendly element-mobile">100% mobile friendly!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% project_no += 1 %>
+
+    <div class="col-xs-12 col-md-6  col-projects">
+      <div class="project-card-<%="#{project_no}"%>  projects-card" style="background-color: rgba(245,221,255,1)">
+        <div class="projects-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0) 0%, rgba(0,36,61,0) 50%), url(<%= asset_path("projects-everything.png") %>); background-size: 40%;">
+        </div>
+        <div class="projects-section">
+          <p class="projects-section-text">Rails movie recommendation app</p>
+        </div>
+        <div class="projects-description">
+          <div class="project-description-items">
+            <h1 class="project-title">
+              Everything.me
+            </h1>
+            <h2 class="project-tags">
+              Group project &nbsp; Recommendation systems &nbsp; Desktop only &nbsp; Ruby on Rails
+            </h2>
+            <p class="project-description">
+              Everything is the final project I developed alongside 3 other students in Le Wagon. Everything gathers info about your tastes in a fun way, and gives movie recommendations based on your similarity with your friends and other users.
+            </p>
+            <p class="project-cta">
+              Click to see details
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% project_no += 1 %>
+
+    <div class="col-xs-12 col-md-6  col-projects">
+      <div class="project-card-<%="#{project_no}"%> projects-card" style="background-color: rgba(80,80,80,1)">
+        <div class="projects-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0) 0%, rgba(0,36,61,0) 50%), url(<%= asset_path("projects-spacewagons.png") %>); background-size: 60%;">
+        </div>
+        <div class="projects-section text-center">
+          <p class="projects-section-text" style="color: rgba(220,220,220,1)">Rails marketplace game</p>
+        </div>
+        <div class="projects-description">
+          <div class="project-description-items">
+            <h1 class="project-title" style="color: rgba(240,240,240,1)">
+              Space Wagons
+            </h1>
+            <h2 class="project-tags" style="color: rgba(240,240,240,1)">
+              Group project &nbsp; Multiplayer game &nbsp; Desktop only &nbsp; Ruby on Rails
+            </h2>
+            <p class="project-description" style="color: rgba(240,240,240,1)">
+              Space Wagons was also developed with a team during the Le Wagon Bootcamp. Le Wagon asked us to build a marketplace website. We went a little further. We built a game in which you start with a spaceship and can choose parts for the spaceship. Then, you make expeditions to look for better parts and you can trade parts in the galactic marketplace. At the end of each day, a race takes plays to find the best pilot of the galaxy.
+            </p>
+            <p class="project-cta">
+              Click to see details
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% project_no += 1 %>
+
+    <div class="col-xs-12 col-md-6  col-projects">
+      <div class="project-card-<%="#{project_no}"%>  projects-card" style="background-color: #FF9696">
+        <div class="projects-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0) 0%, rgba(0,36,61,0) 50%), url(<%= asset_path("projects-burgershop.png") %>); background-size: 50%;">
+        </div>
+        <div class="projects-section">
+          <p class="projects-section-text">Rails online store</p>
+        </div>
+        <div class="projects-description">
+          <div class="project-description-items">
+            <h1 class="project-title">
+              Burger Shop
+            </h1>
+            <h2 class="project-tags">
+              Practice project &nbsp; Online shop &nbsp; Mobile friendly &nbsp; Ruby on Rails
+            </h2>
+            <p class="project-description">
+              I created Burger Shop because I wanted to practice Rails and MVC architecture on a high level. In Burger Shop, you can shop for burgers and beverages from many options. All burgers are 100% customizable. You can manage addresses for the delivery and track the progress of your delivery.
+            </p>
+            <p class="project-cta">
+              Click to see details
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% project_no += 1 %>
+
+    <div class="col-xs-12 col-md-6  col-projects">
+      <div class="project-card-<%="#{project_no}"%>  projects-card" style="background-color: rgb(253, 255, 178)">
+        <div class="projects-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0) 0%, rgba(0,36,61,0) 50%), url(http://jhnet.co.uk/projects/figures/neural_network/neural_network.png); background-size: 70%;">
+        </div>
+        <div class="projects-section">
+          <p class="projects-section-text">Neural networks applied to football</p>
+        </div>
+        <div class="projects-description">
+          <div class="project-description-items">
+            <h1 class="project-title">
+              Senior project: Neural networks applied to Football
+            </h1>
+            <h2 class="project-tags">
+              Academic publication &nbsp; Neural Networks &nbsp; Matlab
+            </h2>
+            <p class="project-description">
+              I always thought that end of course research projects have boring titles and for many it is a boring work you have to do just to graduate. I wanted to spice it up a little bit. I tried to study how well neural networks can predict soccer matches and devise a bot which is able to profit in sports bets. In the end, the bots made a small profit on average, but were unreliable. However, the process and results brought a lot of cool insights, analysis  and graphs
+            </p>
+            <p class="project-cta">
+              Click to download article (pt-br)
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% project_no += 1 %>
+
+    <div class="col-xs-12 col-md-6  col-projects">
+      <div class="project-card-<%="#{project_no}"%>  projects-card" style="background-color: rgb(39, 206, 74)">
+        <div class="projects-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0) 0%, rgba(0,36,61,0) 50%), url(<%= asset_path("projects-blackjack-spd.png") %>); background-size: 40%;">
+        </div>
+        <div class="projects-section">
+          <p class="projects-section-text">Blackjack game statistical analysis</p>
+        </div>
+        <div class="projects-description">
+          <div class="project-description-items">
+            <h1 class="project-title">
+              Blackjack analysis
+            </h1>
+            <h2 class="project-tags">
+              Curiosity project &nbsp; Statistical analysis &nbsp; C
+            </h2>
+            <p class="project-description">
+              I always found the dynamics and mathematics behind the games interesting. Blackjack caught my attention because it is the fairest game that can be played on a casino, and the only game in which a player can be skilled enough to actually beat the house. Back when I was 14, I wrote these codes in C to make a statistic analysis of the game and built a full report that has been downloaded over 500 times!
+            </p>
+            <p class="project-cta">
+              Click to see details
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
 
 
 
