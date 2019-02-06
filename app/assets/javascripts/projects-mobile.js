@@ -64,7 +64,7 @@ Array.prototype.forEach.call(projectCards, card => {
 
     } else {
 
-      if (projectDestinations[cardIndex].includes('localhost')) {
+      if (projectDestinations[cardIndex].includes('localhost') || projectDestinations[cardIndex].includes('felipemsantos')) {
         // If website is inside this site, open in same window
         window.open(projectDestinations[cardIndex], '_self')
       } else {
