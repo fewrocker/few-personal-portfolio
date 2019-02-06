@@ -72,8 +72,6 @@
   border-bottom: 3px solid $spacewagons-green;
 }
 
-
-
 // Mobile navbar
 /* Main navbar */
 .navbar {
@@ -129,6 +127,7 @@
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
+  padding-left: 0;
 }
 .navbar-dropdown-menu li > a {
   transition: color 0.3s ease;
@@ -137,6 +136,7 @@
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
+  position: relative;
 }
 .navbar-dropdown-menu li > a:hover {
   background: transparent !important;
@@ -157,6 +157,16 @@
 
 .navbar::before, .navbar::after {
   display: none;
+}
+
+.navbar-active::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background: #3498db;
+  left: 5px;
+  top: 0;
 }
 
 @media screen and (max-width: 768px) {
