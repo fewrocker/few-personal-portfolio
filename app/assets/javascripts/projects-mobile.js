@@ -63,7 +63,14 @@ Array.prototype.forEach.call(projectCards, card => {
       card.classList.add('card-active')
 
     } else {
-      window.open(projectDestinations[cardIndex], '_blank');
+
+      if (projectDestinations[cardIndex].includes('localhost')) {
+        // If website is inside this site, open in same window
+        window.open(projectDestinations[cardIndex], '_self')
+      } else {
+        // If website is outside this site, open a new window
+        window.open(projectDestinations[cardIndex], '_blank')
+      }
     }
   });
 });
