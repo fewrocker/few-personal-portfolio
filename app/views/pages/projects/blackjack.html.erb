@@ -19,7 +19,7 @@
         Task
       </h1>
       <p class="blackjack-section-text">
-        Write a computer program which arrives at the best possible strategy to play a game of Blackjack. I did this project when I was 14. So it is fun to see how I used to code back then!
+        Write a computer program which arrives at the best possible strategy to play a game of Blackjack. I did this project when I was 14 out of curiosity. So it is fun to see how I used to code back then!
       </p>
 
   </div>
@@ -39,7 +39,7 @@
     </p>
 
     <p class="blackjack-section-text">
-      House edge is the mathematical advantage the house holds in any game, and therefore their expected profit over the long run with a game. If you were to play infinite rounds against the house, their profits over you would converge to the house edge
+      House edge is the mathematical advantage the house holds in any game, and therefore their expected profit over the long run with a game. If you were to play infinite rounds against the house, their profits over you would converge to the house edge.
     </p>
 
     <p class="blackjack-section-text">
@@ -51,11 +51,11 @@
     </h1>
 
     <p class="blackjack-section-text">
-      Playing blackjack is fairly easy. Each player plays against the house, and not between themselves. Each player receives two cards whose values get added up to form a total in the player's hand. The dealer receives one card on the beggining so the players can have an idea of the dealer's starting hand. The goal is trying to get your total as close to 21 as possible, without going over, or "busting". If you bust, you lose this round to the dealer. Each player decide between standing (not asking for any more cards), hitting (ask for one more card), double down (doubling your bet but can only receive 1 extra card) or splitting (separate 1 game in 2 if your starting hand has two cards of the same value).
+      Playing Blackjack is fairly easy. Each player plays against the house, and not against others. Each player receives two cards whose values get added up to form a total in the player's hand. The dealer receives one card on the beggining so the players can have an idea of the dealer's starting hand. The goal is trying to get your total as close to 21 as possible, without going over, or "busting". If you bust, you lose this round to the dealer. Each player decide between standing (not asking for any more cards), hitting (ask for one more card), double down (doubling your bet but can only receive 1 extra card) or splitting (separate 1 game in 2 if your starting hand has two cards of the same value).
     </p>
 
     <p class="blackjack-section-text">
-      Then, the remaining players will play against the house. The dealer starts with his initial card and plays automatically and has to play exactly according to the rules, asking for cards until the total is between 17 and 21 or until he busts. The dealer only hits or stands.. If the dealer busts, everyone except the players that busted will win. If the dealer stays within 17 and 21, their hands will be compared to see who is closer to 21
+      After all players play, each of the players who didn't bust will play against the house. The dealer starts with his initial card and plays automatically according to the rules, asking for cards until the total is between 17 and 21 or until he busts. The dealer only hits or stands. If the dealer busts, everyone except the players that busted will win. If the dealer stays within 17 and 21, their hands will be compared to see who is closer to 21 to see who won.
     </p>
 
     <h1 class="blackjack-section-subtitle">
@@ -63,11 +63,11 @@
     </h1>
 
     <p class="blackjack-section-text">
-      There are few other details that affect gameplay, but these are the basic rules. Even though many players can play at the same time, the duels occur in parallel. There are many decks shuffled in play, and therefore we can assume the cards missing on the deck do not severelly impact the cards that will be dealt (more on that later). Therefore, for a combination of player cards and dealer faceup card, there will always be the optimal decision for the player based on mathematical odds.
+      There are few other details that affect gameplay, but these are the basic rules. Even though many players can play at the same time, the duels occur in parallel. There are many decks shuffled in play, and therefore we can assume the cards missing on the deck do not severelly impact the cards that will be dealt. Therefore, for a combination of player cards and dealer faceup card, there will always be the optimal decision for the player based on mathematical odds.
     </p>
 
     <p class="blackjack-section-text">
-      The compilation of these optimal decisions is called the Basic Strategy. Every player can learn the basic strategy by memorizing a table, or sometimes even by bringing the table with you if the casino if friendly enough! Playing perfect basic strategy will ensure the house edge to drop to the 1% mentioned before. If you play by heart and without following the basic strategy, the house edge will increase!
+      The compilation of these optimal decisions is called the Basic Strategy. Every player can learn the basic strategy by memorizing a table, or sometimes even by bringing the table with you if the casino if friendly enough! Playing perfect basic strategy will ensure the house edge to drop to the 1% mentioned before. If you play without following the basic strategy, the house edge will increase!
     </p>
 
     <%= image_tag "projects-blackjack-2.png", class:"blackjack-basicstrategy-image" %>
@@ -77,7 +77,7 @@
     </p>
 
     <p class="blackjack-section-text">
-      Therefore, the goal of this analysis is: write a program which simulates blackjack rounds on a given set of rules and derives the basic strategy for that set of rules. For this, the program will calculate what is the expected return for each player vs dealer combination if he decides for each of the possible actions, and then see which action yields the best returns.
+      The goal of this analysis is to write a program which simulates Blackjack rounds on a given set of rules and derives the basic strategy (best strategy) for that set of rules. For this, the program will calculate what is the expected return for each player vs dealer combination if he decides for each of the possible actions, and then see which action yields the best returns.
     </p>
 
   </div>
@@ -93,7 +93,7 @@
     </p>
 
     <%= link_to "/download/projects-blackjack.pdf", target: "_blank", class: 'blackjack-filedownload', target: :_blank do  %>
-      <i class="fa fa-file-download"></i>&nbsp;&nbsp;&nbsp;Download the Blackjack Analysis Manual
+      <i class="fa fa-file-download"></i>&nbsp;&nbsp;&nbsp;Download the Blackjack Analysis
     <% end %>
 
     <p class="blackjack-section-text">
@@ -109,13 +109,12 @@
     <%= image_tag "projects-blackjack-4.png", class:"centered-image-small"%>
 
     <p class="blackjack-section-text">
-      The analysis also gives some interesting insights. Playing blackjack with basic strategy feels good, because you are playing the game on a high level based on what you studied. But understanding the odds behind the hands will give you even more power: now you know that on an A7 vs 2, you actually can choose between standing and doubling down with the same expected returns. This gives opportunity for basic strategy deviations and following your instincts!
+      The analysis also gives some interesting insights. Playing blackjack with basic strategy feels good, because you are playing the game on a high level based on what you studied. But understanding the odds behind the hands will give you even more power: now you know that on an A7 vs 2, instead of always standing, you can choose between standing and doubling down with the same expected returns. This gives opportunity for basic strategy deviations and for following your instincts, making the game even more enjoyable!
     </p>
 
     <h1 class="blackjack-section-title">
       Code snippets
     </h1>
-
 
     <h2 class="blackjack-section-subtitle">
       Blackjack simulation (.c)

@@ -24,7 +24,7 @@
       Task and Scope
     </h1>
     <p class="burgershop-section-text">
-      <span class="burgershop-text-title">BurgerShop</span> was built with the intention of practicing more advanced Rails MVC architectures and user flows. BurgerShop simulates an online shop for a burger delivery app. The user accesses his/her account, and shops his desired items from the menu. All the burgers are fully customizable and you can pick which ingredients and how much of each you want. There are also beverage options. Then, the user can register addresses for the delivery, place the order and track the progress of the order real-time.
+      <span class="burgershop-text-title">BurgerShop</span> was built with the intention of practicing more advanced Rails MVC flows. BurgerShop simulates an online shop for a burger delivery app. The user accesses his/her account, and shops for their desired items from the menu. All the burgers are fully customizable and you can pick which ingredients and how much of each you want. There are also beverage options. Then, the user can register addresses for the delivery, place the order and track the progress of the order real-time.
     </p>
     <p class="burgershop-section-text">
       Also, <span class="burgershop-text-title">BurgerShop</span> is 100% mobile-friendly!
@@ -36,7 +36,6 @@
         <p class="burgershop-gotosite-text">Go to website!</p>
       </div>
     <% end %>
-
 
     <h1 class="burgershop-section-title">
       User experience
@@ -50,7 +49,7 @@
     </h1>
 
     <p class="burgershop-section-text">
-      Then, the user arrives at the meals menu. Here, he is able to see all items which are available, in two categories: burgers and drinks. The user can also see a summary of the order total, click to expand to see his orders details and remove items from the order.
+      Then, the user arrives at the meals menu. Here, he/she is able to see all items which are available, in two categories: burgers and drinks. The user can also see a summary of the order total, click to expand to see his orders details and remove items from the order.
     </p>
 
     <%= image_tag "projects-burgershop-3.png", class:"centered-image" %>
@@ -73,8 +72,7 @@
     </h1>
 
     <p class="burgershop-section-text">
-      The drinks are more straightforward. Just pick a beverage between the options, and click on the card to add. A pop-up will appear so you can select the desired quantity, while seeing a live feedback on the total cost. If the user places two orders for the same beverage, the system automatically groups the orders.
-
+      The drinks are more straightforward. Just pick a beverage between the options, and click on the card to add. A pop-up will appear so you can select the desired quantity, while seeing a live feedback on the total cost. If the user places two orders for the same beverage, the system will automatically group them.
 
     <div class="video text-center">
       <video src="/videos/projects-burgershop-2.mp4" autoplay loop muted class="centered-image"></video>
@@ -85,7 +83,7 @@
     </h1>
 
     <p class="burgershop-section-text">
-      When you finish picking your items, you can proceed to checkout. You must select an address for delivery between your registered address. If there is no address registered, you will create one. One last screen shows your order summary, price and address so you can give a final confirmation.
+      When you finish picking your items, you can proceed to checkout. You must select an address for delivery between your registered address. If you haven't registered an address yet, you will create one. One last screen shows your order summary, price and address so you can give a final confirmation.
     </p>
 
     <%= image_tag "projects-burgershop-4.png", class:"centered-image" %>
@@ -113,9 +111,9 @@
     <p class="burgershop-section-text">
       The first step on the project is designing the models and their relations. The solution uses three levels of models to create an order:
       <ul class="burgershop-list">
-        <li class="burgershop-list-item">The first level are the models for items avaiable to be bought. These include the basic burgers <span class="burgershop-italics">(burger)</span>, beverages <span class="burgershop-italics">(drink)</span> and ingredients <span class="burgershop-italics">(ingredient)</span>. The ingredients model is necessary to make the burgers customizable.</li>
-        <li class="burgershop-list-item">The second level are the models for order items. Order items can be burgers <span class="burgershop-italics">(burger_order)</span> and beverage orders <span class="burgershop-italics">(drink_order)</span>. Since burgers are customizable, the burger_order is also related to all the ingredients and their quantities selected during burger customization <span class="burgershop-italics">(ingredient_order)</span>.</li>
-        <li class="burgershop-list-item">The third and last level is the entire order level <span class="burgershop-italics">(order)</span>. Therefore, the order is related to the items the user picked for the order, which are then related to the items offered by the shop.</li>
+        <li class="burgershop-list-item">The first level are the models for items offered by the shop (the menu). These include the basic burgers <span class="burgershop-italics">(burger)</span>, beverages <span class="burgershop-italics">(drink)</span> and ingredients <span class="burgershop-italics">(ingredient)</span>. The ingredients model is necessary to make the burgers customizable.</li>
+        <li class="burgershop-list-item">The second level are the models for order items. Order items can be burgers <span class="burgershop-italics">(burger_order)</span> and beverage orders <span class="burgershop-italics">(drink_order)</span>. Since burgers are customizable, the <span class="burgershop-italics">burger_order</span> is also related to all the ingredients and their quantities selected during burger customization <span class="burgershop-italics">(ingredient_order)</span>.</li>
+        <li class="burgershop-list-item">The third and last level is the entire order level <span class="burgershop-italics">(order)</span>. Long story short, the order (level 3) is linked to the items the user added to the order with its customizations and quantities (level 2), which can be picked between the items offered by the shop (level 1).</li>
         <li class="burgershop-list-item">There are also models for the users and addresses. The user model is handled by Devise for authentication and also helps hold information about the user, such as order history and addressess. The address model is useful so the user can order again for addresses he already ordered in the past.</li>
       </ul>
     </p>
@@ -129,15 +127,15 @@
     </p>
 
     <p class="burgershop-section-text">
-      The orders have different status. Whenever the user arrives at the menu screen, the app creates an order with "shopping" status. All order items placed will be saved on this order, which will be available until the user checks out. When the user pays, the order changes to "On preparation", then to "Out for delivery", and finally "Completed". All these changes can be tracked on the "My orders" tab.
+      The orders have different status. Whenever the user arrives at the menu screen, the app creates an order with "shopping" status. All order items placed will be saved on this order, which will be available until the user checks out. When the user pays, the order changes to "Cooking", then to "Out for delivery", and finally "Completed". All these changes can be tracked on the "My orders" tab.
     </p>
 
     <p class="burgershop-section-text">
-      For burgers, the user selects a base burger and goes to the customization screen. It contains a rails form which has one input for each ingredient available in the shop. The value of each input is the quantity the user picked for that ingredient. Therefore, a Javascript logic handles the user interface, highlighting the selected ingredients, updating the order value and changing the values of the inputs on the rails forms. When the user clicks "Place order", Rails will create an instance of <span class="burgershop-italics">burger_order</span> and many instances of <span class="burgershop-italics">ingredient_order</span>, one for each ingredient present in the burger, also holding the quantity selected. All <span class="burgershop-italics">ingredient_order</span> are then linked to the parent burger_order, which is linked to the parent <span class="burgershop-italics">order</span>.
+      For burgers, the user selects a base burger and goes to the customization screen. It contains a Rails form which has one input for each ingredient available in the shop. The value of each input is the quantity the user picked for that ingredient. A Javascript logic handles the user interface, highlighting the selected ingredients, updating the order value and changing the values of the inputs on the Rails form. When the user clicks "Place order", Rails will create an instance of <span class="burgershop-italics">burger_order</span> and many instances of <span class="burgershop-italics">ingredient_order</span>, one for each ingredient present in the burger, also holding the quantity selected. All <span class="burgershop-italics">ingredient_order</span> are then linked to the parent burger_order, which is linked to the parent <span class="burgershop-italics">order</span>.
     </p>
 
     <p class="burgershop-section-text">
-      For drinks, the process is easier. When the user opens the pop-up to select the beverage quantity, there is a Rails form. A Javascript handles the user interaction of picking more or less of that item, updates the quantity and price for the order and also the value in the Rails form. When the user hits the "Add" button, Rails creates one instance of <span class="burgershop-italics">drink_order</span> with the specified quantity.
+      For drinks, the process is easier. When the user opens the pop-up to select the beverage quantity, there is a Rails form. A Javascript handles the user interaction of picking more or less of that item, updates the quantity and price for the order and also the value in the Rails form. When the user hits the "Add" button, Rails creates one instance of <span class="burgershop-italics">drink_order</span> with the specified quantity. If there are two orders for the same beverage, Rails will destroy both and create one order with quantity equal to the sum of the two destroyed orders quantities.
     </p>
 
     <h1 class="burgershop-section-subtitle">
@@ -149,7 +147,7 @@
     </p>
 
     <p class="burgershop-section-text">
-      To show all the burgers on the order, the view iterates through all <span class="burgershop-italics">burger_order</span> on <span class="burgershop-italics">order</span>. It builds a header with the <span class="burgershop-italics">burger_order</span> burger name, price and delete button if needed. To show all the ingredients and quantities on the burger, the views iterates through all <span class="burgershop-italics">ingredient_order</span> linked to the <span class="burgershop-italics">burger_order</span>
+      To show all the burgers on the order, the view iterates through all <span class="burgershop-italics">burger_order</span> on <span class="burgershop-italics">order</span> related to the current user. It builds a header with the <span class="burgershop-italics">burger_order</span> burger name, price and delete button if needed. To show all the ingredients and quantities on the burger, the views iterates through all <span class="burgershop-italics">ingredient_order</span> linked to the <span class="burgershop-italics">burger_order</span>, showing ingredient name and quantity.
     </p>
 
     <p class="burgershop-section-text">
