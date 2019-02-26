@@ -27,18 +27,21 @@
 }
 
 .experiences-content {
-  font-size: 20px;
-  font-weight: lighter;
+  font-size: 18px;
+  font-weight: 300;
   color: rgba(100,100,100,1);
-  font-family: $nanum;
+  font-family: $roboto;
 
   text-align: justify;
 }
 
 .experiences-content-highlight {
-  color: $dark-blue;
   font-family: $roboto;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgba(80,80,80,1);
+
+  margin: 0px 0 2px 0;
 }
 
 .experiences-education-title {
@@ -60,9 +63,7 @@
 }
 
 .experiences-education-description {
-  font-family: $nanum;
   font-size: 20px;
-  font-weight: lighter;
   color: rgba(100,100,100,1);
   text-align: justify;
 
@@ -71,20 +72,20 @@
 
 .experience-title {
   font-family: $roboto;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
   color: $dark-blue;
 }
 
 .experience-when {
   font-family: $roboto;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   color: rgba(125,125,125,1);
 }
 
 .experience-description {
-  font-family: $nanum;
+  font-family: $roboto;
   font-size: 20px;
   font-weight: lighter;
   color: rgba(100,100,100,1);
@@ -96,6 +97,27 @@
   font-size: 20px;
   color: $vivid-blue;
   text-align: justify;
+}
+
+.link-buttons {
+  color: $mid-blue;
+  text-align: center;
+  display: block;
+  border: 1px solid black;
+  padding: 30px 0;
+  margin: 10px 0;
+
+  i {
+    font-size: 30px;
+    margin-right: 20px;
+  }
+
+  &:hover {
+    color: white;
+    background: $mid-blue;
+    transition: 500ms ease;
+    cursor: pointer;
+  }
 }
 
 .modal-dialog-images {
@@ -198,7 +220,7 @@
   font-size: 22px;
   font-weight: normal;
   color: rgba(120,120,120,1);
-  font-family: $nanum;
+  font-family: $roboto;
 
   text-align: justify;
 
@@ -304,7 +326,7 @@
   }
 
   .experiences-education-description {
-    font-family: $nanum;
+    font-family: $roboto;
     font-size: 20px;
     font-weight: lighter;
     color: rgba(100,100,100,1);

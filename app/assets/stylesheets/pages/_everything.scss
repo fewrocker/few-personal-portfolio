@@ -24,7 +24,7 @@
 .everything-section-title {
   font-size: 35px;
   color: #A300FF;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 50px;
   border-bottom: 1px solid rgba(150,150,150,1);
   font-family: $lobster;
@@ -60,6 +60,28 @@
 .everything-section-subtitle {
   font-size: 25px;
   color: #A300FF;
+}
+
+.everything-github-link {
+  color: #A300FF;
+  text-align: center;
+  display: block;
+  border: 1px solid #A300FF;
+  padding: 30px 0;
+  margin: 30px 0 0 0;
+  background: #141414;
+
+  i {
+    font-size: 30px;
+    margin-right: 20px;
+  }
+
+  &:hover {
+    color: white;
+    background: #A300FF;
+    transition: 500ms ease;
+    cursor: pointer;
+  }
 }
 
 

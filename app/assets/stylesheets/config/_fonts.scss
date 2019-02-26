@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Libre+Franklin:300,4007,00|Oswald:300,400,700|Roboto+Condensed:300,400,700|Roboto:100,200,300,400,500,600,700");
 @import url("https://fonts.googleapis.com/css?family=Amatic+SC|Encode+Sans+Condensed:200,300,400,500,600,700|Great+Vibes|Lobster|Nanum+Myeongjo:400,700");
 @import url("https://fonts.googleapis.com/css?family=Bangers");
+@import url("https://fonts.googleapis.com/css?family=Oswald:300,400,600");
 
 // Define fonts for body and headers
 $body-font: "Open Sans", "Helvetica", "sans-serif";
@@ -25,3 +26,6 @@ $greatvibes: 'Great Vibes', cursive;
 $nanum: 'Nanum Myeongjo', serif;
 
 $bangers: 'Bangers', cursive;
+
+// oswald for paragraph text
+$oswald: 'Oswald', sans-serif;
