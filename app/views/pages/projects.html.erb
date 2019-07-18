@@ -269,6 +269,9 @@
 <!-- ----------------------mobile------------------------- -->
 <!-- ----------------------------------------------------- -->
 <!-- ----------------------------------------------------- -->
+<!-- Remove the link_to tags from the desktop version----- -->
+<!-- The javascript projects-mobile will handle link open- -->
+<!-- Add mobile friendly tags when right------------------ -->
 
 <div class="page-mobile">
 
@@ -282,69 +285,68 @@
   <div class="row row-projects">
 
     <div class="col-xs-12 col-md-6  col-projects">
-      <%= link_to "/projects/caseplatform", class:"project-link-#{project_no} projects-link" do %>
-        <div class="project-card-<%="#{project_no}"%>  projects-card" style="background-color: #102030">
-          <div class="projects-image">
-            <div class="project-logo-caseplatform-div text-center">
-              <h1 class="project-logo-caseplatform-text text-center">
-                Caseplatform
-              </h1>
-            </div>
-          </div>
-          <div class="projects-section">
-            <p class="projects-section-text" style="color: rgba(220,220,220,1)">Rails + Vue professional app</p>
-          </div>
-          <div class="projects-description">
-            <div class="project-description-items">
-              <h1 class="project-title" style="color: rgba(240,240,240,1)">
-                Caseplatform
-              </h1>
-              <h2 class="project-tags" style="color: rgba(240,240,240,1)">
-                Monetized project &nbsp; Rails + Vue &nbsp; Mobile Friendly
-              </h2>
-              <p class="project-description" style="color: rgba(240,240,240,1)">
-                Caseplatform is the platform I use to give coaching sessions for case interview practice; case interviews are tests given by Management Consulting firms (Mckinsey, Bain&Company, Boston Consulting Group) in the toughest selection processes out there which I happen to have a great expertise at.
-              </p>
-              <p class="project-cta" style="color: rgba(240,240,240,1)">
-                Click to see details
-              </p>
-            </div>
+      <div class="project-card-<%="#{project_no}"%>  projects-card" style="background-color: #102030">
+        <div class="projects-image">
+          <div class="project-logo-caseplatform-div text-center">
+            <h1 class="project-logo-caseplatform-text text-center">
+              Caseplatform
+            </h1>
           </div>
         </div>
-      <% end %>
+        <div class="projects-section">
+          <p class="projects-section-text" style="color: rgba(220,220,220,1)">Rails + Vue professional app</p>
+        </div>
+        <div class="projects-description">
+          <div class="project-description-items">
+            <h1 class="project-title" style="color: rgba(240,240,240,1)">
+              Caseplatform
+            </h1>
+            <h2 class="project-tags" style="color: rgba(240,240,240,1)">
+              Monetized project &nbsp; Rails + Vue &nbsp; Mobile Friendly
+            </h2>
+            <p class="project-description" style="color: rgba(240,240,240,1)">
+              Caseplatform is the platform I use to give coaching sessions for case interview practice; case interviews are tests given by Management Consulting firms (Mckinsey, Bain&Company, Boston Consulting Group) in the toughest selection processes out there which I happen to have a great expertise at.
+            </p>
+            <p class="project-cta" style="color: rgba(240,240,240,1)">
+              Click to see details
+            </p>
+            <p class="projects-mobile-friendly element-mobile">100% mobile friendly!</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <% project_no += 1 %>
 
     <div class="col-xs-12 col-md-6  col-projects">
-      <%= link_to "http://psdblbr.herokuapp.com/home", target:"_blank", class:"project-link-#{project_no} projects-link" do %>
-        <div class="project-card-<%="#{project_no}"%> projects-card" style="background-color: #000">
-          <div class="projects-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0) 0%, rgba(0,36,61,0) 50%), url(https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/pen-icon-18-256.png); background-size: 30%;">
-          </div>
-          <div class="projects-section">
-            <p class="projects-section-text" style="color: rgba(220,220,220,1)">Rails + Vue Blog</p>
-          </div>
-          <div class="projects-description">
-            <div class="project-description-items">
-              <h1 class="project-title" style="color: rgba(240,240,240,1)">
-                Single-page blog
-              </h1>
-              <h2 class="project-tags" style="color: rgba(240,240,240,1)">
-                Vue.js &nbsp; Single page app &nbsp; Mobile Friendly
-              </h2>
-              <p class="project-description" style="color: rgba(240,240,240,1)">
-                This project is an engine for single page application blogs. This design is very elegant and allows better navigation through the posts and provides a better user experience. The blog tracks all user sessions and visits to posts, how much time they spent reading each post and how much they liked it. You can access admin panel by accessing /admin-login route and entering password "admin"; Writing posts is easy through the built-in WYSIWYG editor.
-              </p>
-              <p class="project-cta" style="color: rgba(240,240,240,1)">
-                Click to open test application
-              </p>
-            </div>
+      <div class="project-card-<%="#{project_no}"%> projects-card" style="background-color: #000">
+        <div class="projects-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0) 0%, rgba(0,36,61,0) 50%), url(https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/pen-icon-18-256.png); background-size: 30%;">
+        </div>
+        <div class="projects-section">
+          <p class="projects-section-text" style="color: rgba(220,220,220,1)">Rails + Vue Blog</p>
+        </div>
+        <div class="projects-description">
+          <div class="project-description-items">
+            <h1 class="project-title" style="color: rgba(240,240,240,1)">
+              Single-page blog
+            </h1>
+            <h2 class="project-tags" style="color: rgba(240,240,240,1)">
+              Vue.js &nbsp; Single page app &nbsp; Mobile Friendly
+            </h2>
+            <p class="project-description" style="color: rgba(240,240,240,1)">
+              This project is an engine for single page application blogs. This design is very elegant and allows better navigation through the posts and provides a better user experience. The blog tracks all user sessions and visits to posts, how much time they spent reading each post and how much they liked it. You can access admin panel by accessing /admin-login route and entering password "admin"; Writing posts is easy through the built-in WYSIWYG editor.
+            </p>
+            <p class="project-cta" style="color: rgba(240,240,240,1)">
+              Click to open test application
+            </p>
+            <p class="projects-mobile-friendly element-mobile">100% mobile friendly!</p>
           </div>
         </div>
-      <% end %>
+      </div>
     </div>
 
     <% project_no += 1 %>
+
     <div class="col-xs-12 col-md-6 col-projects">
       <div class="project-card-<%="#{project_no}"%>  projects-card" style="background-color: rgba(41,88,142,1)">
         <div class="projects-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0) 0%, rgba(0,36,61,0) 50%), url(<%= asset_path("logo-white-background.png") %>);">
@@ -451,6 +453,7 @@
             <p class="project-cta">
               Click to see details
             </p>
+            <p class="projects-mobile-friendly element-mobile">100% mobile friendly!</p>
           </div>
         </div>
       </div>
