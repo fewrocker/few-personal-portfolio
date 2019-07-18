@@ -1,0 +1,149 @@
+.wrapper-project-caseplatform {
+  background-color: white;
+  min-height: 100vh;
+
+  padding-top: 50px;
+
+  padding-bottom: 150px;
+}
+
+.project-logo-caseplatform-div {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.project-logo-caseplatform-text {
+  margin: 0 !important;
+
+  text-align: center;
+
+  font-size: 65px;
+  color: white;
+  margin-top: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 100%;
+}
+
+.caseplatform-title {
+  font-size: 55px;
+  color: #102030;
+  margin-top: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.caseplatform-main-image {
+  margin: 10px 0 10px 0;
+  width: 100%;
+}
+
+.caseplatform-title-description {
+  font-size: 25px;
+  color: #102030;
+}
+
+.caseplatform-section-title {
+  font-size: 35px;
+  color: #102030;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.caseplatform-section-text {
+  font-size: 20px;
+  color: rgba(60,60,60,1);
+  text-align: justify;
+  font-family: $roboto;
+}
+
+.caseplatform-text-title {
+  font-size: 25px;
+  color: #102030;
+}
+
+.caseplatform-gotosite-text {
+  font-size: 35px;
+  color: #102030;
+}
+
+.caseplatform-gotosite {
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+    transition: 300ms ease;
+  }
+}
+
+.caseplatform-section-subtitle {
+  font-size: 25px;
+  color: #102030;
+}
+
+.caseplatform-github-link {
+  color: #102030;
+  text-align: center;
+  display: block;
+  border: 1px solid #102030;
+  padding: 30px 0;
+  margin: 30px 0 0 0;
+  background: #141414;
+
+  i {
+    font-size: 30px;
+    margin-right: 20px;
+  }
+
+  &:hover {
+    color: white;
+    background: #102030;
+    transition: 500ms ease;
+    cursor: pointer;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .wrapper-project-caseplatform {
+    padding-top: 50px;
+    padding-bottom: 150px;
+  }
+
+  .caseplatform-title-logo {
+    width: 80%;
+    margin-top: 50px;
+  }
+
+  .caseplatform-title-description {
+    font-size: 18px;
+    padding-left: 0px;
+  }
+
+  .caseplatform-section-title {
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+
+  .caseplatform-section-text {
+    font-size: 16px;
+  }
+
+  .caseplatform-text-title {
+    font-size: 22px;
+  }
+
+  .caseplatform-gotosite-text {
+    font-size: 30px;
+  }
+}
