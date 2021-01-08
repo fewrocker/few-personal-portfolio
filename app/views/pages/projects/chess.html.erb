@@ -1,0 +1,10 @@
+<div id="chess-background">
+  <div class="m-5" id="chessboard">
+  </div>
+</div>
+
+<% ["pawn", "rook", "knight", "bishop", "queen", "king"].each do |piece| %>
+  <% [ "black", "white"].each do |color| %>
+    <p class="hide" id="<%= "img-#{piece}-#{color}" %>"><%= image_url("/chess/#{piece}-#{color}.png") %></p>
+  <% end %>
+<% end %>
